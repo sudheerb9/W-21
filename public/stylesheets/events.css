@@ -1,0 +1,179 @@
+body{
+  background-color: black;
+}
+nav > ul> li> a:hover{
+text-decoration: none;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+}
+.pdf{
+background: #ff4b5a;
+border-radius: 5px;
+text-align: center;
+border: 1px solid transparent;
+/*text-decoration-color: #ffffff;*/
+/*width: 100px;*/
+margin-top: 10px;
+padding: 10px;
+transition-duration: .3s;
+}
+.pdf:hover{
+background: #000000;
+color: #fff;
+}
+.contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  background-color: #ff4b5a;
+  border-radius: 25px;
+  border: none;
+  /* font-family: Poppins-Medium; */
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -moz-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -o-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -ms-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+}
+
+.btn2{
+    background-color: #2c3e9c;
+      
+  box-shadow: 0 10px 30px 0px #2c3e9c;
+  -moz-box-shadow: 0 10px 30px 0px #2c3e9c;
+  -webkit-box-shadow: 0 10px 30px 0px #2c3e9c;
+  -o-box-shadow: 0 10px 30px 0px #2c3e9c;
+  -ms-box-shadow: 0 10px 30px 0px #2c3e9c;
+}
+
+.contact100-form-btn:hover {
+  background-color: #333333;
+  box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+}
+
+
+@media screen and (min-width: 992px){
+  .main h2{
+      color: #fff;
+      vertical-align: middle;
+      
+      font-size: 5rem;
+      font-family: 'Montserrat', sans-serif;
+  }
+  .main >  div >a img{
+      margin-top: calc(50vh - 300px);
+      border-radius: 50%;
+  }
+  .main >  div >a img:hover{
+      transform: scale(1.2);
+  }
+}
+@media screen and (max-width: 992px){
+  .main{
+      width: 100%;
+      height: 100vh;
+  }
+  .main h2{
+      margin-top: 20%;
+      color: #fff;
+      font-size: 5rem;
+      font-family: 'Montserrat', sans-serif;
+  }
+  .main > div >a img{
+      display: block;
+      margin: auto;
+      margin-top:20%;
+      border-radius: 50% !important;
+  }
+}
+
+.cen{
+  align-items: center;
+}
+
+/* unvisited link */
+a.ar:link {
+  color:#808080;
+  text-decoration: none;
+}
+
+/* visited link */
+a.ar:visited {
+  color:#808080;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a.ar:hover {
+  color:white;
+  text-decoration: none;
+}
+
+/* selected link */
+a.ar:active {
+  color:#808080;
+  text-decoration: none;
+}
+
+.accordion-flush .accordion-button {
+  color: white;
+  font-size: 1.2rem;
+}
+.accordion-flush .accordion-item .accordion-button {
+  background-color: transparent;
+}
+.accordion-item{
+    border-top: 1px solid #fff;
+}
+.accordion-button{
+    line-height: 75px;
+    height: auto;
+}
+.accordion-body{
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+.knowmore-btn{
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -16px;
+  width: 32px;
+  height: 32px;
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+}
+.knowmore-btn {
+  margin: 0 0.5rem;
+  animation: fadeInDown; 
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+ul{
+    list-style: none;
+}

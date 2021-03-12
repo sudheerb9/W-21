@@ -1,0 +1,322 @@
+<html>
+<head>
+    <title>User Profile | Wissenaire'21</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="./stylesheets/navbar.css" rel="stylesheet">
+    <link href="./stylesheets/profile.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/dist/boxicons.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <style>
+.services .icon-box {
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    padding: 80px 20px;
+    transition: all ease-in-out 0.3s;
+  }
+  
+  .services .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background:-webkit-linear-gradient(#1684fc, #08e4fc);
+    border-radius: 5px;
+    transition: all .3s ease-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transform-style: preserve-3d;
+  }
+  
+  .services .icon-box .icon i {
+    color: #fff;
+    font-size: 28px;
+  }
+  
+  .services .icon-box .icon::before {
+    position: absolute;
+    content: '';
+    left: -8px;
+    top: -8px;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    transition: all .3s ease-out 0s;
+    transform: translateZ(-1px);
+  }
+  
+  .services .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .services .icon-box h4 a {
+    color: #fff;
+  }
+  
+  .services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .services .icon-box:hover {
+    background: -webkit-linear-gradient(#1684fc, #08e4fc);
+    border-color: #18d26e;
+  }
+  
+  .services .icon-box:hover .icon {
+    background: #fff;
+  }
+  
+  .services .icon-box:hover .icon i {
+    color:#ff7e00;
+  }
+  
+  .services .icon-box:hover .icon::before {
+    background: #35e888;
+  }
+  
+  .services .icon-box:hover h4 a, .services .icon-box:hover p {
+    color: #fff;
+  }
+  .page-navigation-menu >ul >li >i{
+    color:black;
+    font-size:8rem !important;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: 500px){
+    .page-navigation-menu >ul >li >i{
+      font-size:4rem !important;
+      margin-bottom: 8px;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+  
+    </style>
+</head>
+<body>
+  <header style="height: 1vh !important;" >
+    <div id="navigation" class="">
+      <a class="menu-toggle">
+        <div class="btn-toggle">
+          <div>
+            <div class="before"></div>
+            <div class="after"></div>
+          </div>
+        </div>
+      </a>
+      <nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+            
+        <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+        <ul>
+          <% if(participant.name) { %>
+        <li class="open">
+          <i class="icofont-ui-user"></i><br><br><a href="/profile">My Profile</a>
+          </li>
+          <% } else { %>
+        <li class="open">
+          <i class="icofont-sign-in"></i><br><br><a href="/auth/google">Sign In</a>
+        </li>
+          <% } %>
+        <li>
+          <i class="icofont-info-circle"></i><br><br><a href="/about">About</a>
+        </li>
+        <li>
+          <i class="icofont-puzzle"></i><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+        </li>
+        <li>
+          <i class="icofont-learn"></i><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+        </li>
+        <li>
+          <i class="icofont-mic"></i><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+        </li>
+        <li>
+          <i class="icofont-robot"></i><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+        </li>
+        
+        <li>
+          <i class="icofont-light-bulb"></i><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+        </li>
+        <li>
+          <i class="icofont-star-alt-1"></i><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+        </li>
+        <li>
+          <i class="icofont-live-support"></i><br><br><a href="ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+        </li>
+        <li>
+          <i class="icofont-speech-comments"></i><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+        </li>
+        <li>
+          <i class="icofont-money"></i><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+        </li>
+        <li>
+          <i class="icofont-send-mail"></i><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+        </li>
+  
+        </ul>
+      </nav>
+      
+      <div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+        <a href="/" title="Home" rel="home" class="site-branding__logo"> 
+      <dpan class="sr-only">Wissenaire logo</dpan>
+      </a>
+    </div>
+    <div class="menu-slide-back">
+      <span class="icon icon-fonts icon-arrow-back">
+      <span class="sr-only">go back to previous menu</span>
+      </span>
+    </div>
+    </div>
+  </header>
+    <div class="section-title row" data-num="01" data-aos="fade-up"  style="margin-top: 100px;">
+        <h3 class="h6">User Profile</h3>
+    </div>
+    <% if(participant.wissid){
+      %>
+    <div class="row" style="margin-top: 100px;">
+        <div class="large-6 col-12 col-md-6">
+            <div class="leaderboard_profile large-11" style="border: 5px solid gold; border-radius: 8px;">
+                <img src="<%=participant.photo%>" style="width: 100%;">
+                <h4 align="center" style="margin-top:0.2em;"><%=participant.name%></h4>
+                <h5 align="center" style=" margin-top:0.15em">Wissenaire ID: <span style="color: gold;"><%=participant.wissid%></span></h5>
+                
+            </div>
+        </div>
+        <div class="large-6 col-12 col-md-6">
+            <form>
+                <div class="form-group">
+                    <label>Mobile Number (preferably whatsapp)</label>
+                    <input type="number" class="form-control" name="phone" value="<%=participant.phone%>" readonly>
+                </div>
+            
+                <div class="form-group">
+                    <label>Year and Branch of Study</label>
+                    <input type="text" class="form-control" name="year" value="<%=participant.year%>" readonly>
+                </div>   
+                <div class="form-group">
+                    <label>Institute</label>
+                    <input type="text" class="form-control" name="college" value="<%=participant.institute%>" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" class="form-control" name="city" value="<%=participant.city%>" readonly>
+                </div>
+        
+                <div class="form-group">
+                    <label>Reference ID of CA (If any)</label>
+                    <input type="text" class="form-control" name="caref" value="<%=participant.caref%>" readonly>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <% }  else {
+      %>
+    <div class="row" style="margin-top: 50px;">
+        <div class="large-6 col-12 col-md-6">
+            <div class="leaderboard_profile large-11" style="border: 5px solid gold; border-radius: 8px;">
+                <img src="<%=participant.photo%>" style="width: 100%;">
+                <h4 align="center" style="margin-top:0.2em;"><%=participant.name%></h4>
+                <!-- <h5 align="center" style=" margin-top:0.15em">Wissenaire ID: <span style="color: gold;"><%=participant.wissid%></span></h5> -->
+                
+            </div>
+        </div>
+        <div class="large-6 col-12 col-md-6">
+            <form>
+                <div class="form-group">
+                    <label>Mobile Number (preferably whatsapp)</label>
+                    <input type="number" class="form-control" name="phone" placeholder="Enter your phone number" required>
+                </div>
+            
+                <div class="form-group">
+                    <label>Year and Branch of Study</label>
+                    <input type="text" class="form-control" name="year" placeholder="Eg: 3rd year Mechanical" required>
+                </div>   
+                <div class="form-group">
+                    <label>Institute</label>
+                    <input type="text" class="form-control" name="institute" placeholder="Eg: IIT Bhubaneswar" required>
+                </div>
+
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" class="form-control" name="city" placeholder="Eg: Bhubaneswar" required>
+                </div>
+        
+                <div class="form-group">
+                    <label>Reference ID of CA (If any)</label>
+                    <input type="text" class="form-control" name="caref" placeholder="Eg: W21CA0001" required>
+                </div>
+                
+                <button type="submit" id="submit" class="btn btn-dark">Submit</button>
+
+            </form>
+            <script>
+              $("form").submit(function(e) {
+                e.preventDefault(); 
+                var form = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: '/profile',
+                    data: form.serialize(), 
+                    success: function(result)
+                    {
+                        if(result === 'success'){
+                            new swal({
+                                title: 'Success',
+                                text: 'Welcome to Wissenaire family !',
+                                icon: 'success'
+                            });
+                          window.location.replace('');
+                        }
+                        else{
+                            new swal({
+                                title: 'Error',
+                                text: 'Please try again',
+                                icon: 'error'
+                            });
+                        }
+                    }
+                    });
+                });
+          </script>
+        </div>
+    </div>
+    <% } %>
+    <br><br>
+    <% if(events.length) { %>
+    <div class="section-title row" data-num="02" data-aos="fade-up">
+        <h3 class="h6">Events Registered</h3>
+    </div>
+    <% } 
+    var values = {
+      "Analog Circuit Design" : "<div class='card' id='acd'><div class='content'><h2 class='title'>Analog Circuit Deisgn</h2><p class='copy'>Event Description</p><a href=''><button class='btn'>UPDATES</button></a></div></div>", 
+      "" : ""
+
+    }%>
+    <div class="row">
+        <main class="page-content">
+          <% for(var i=0; i<events.length; i++){
+            values[event[i].eventname]
+          } %>
+        </main>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+	<script src="./javascripts/jquery.min.js"></script>
+</body>
+</html>
