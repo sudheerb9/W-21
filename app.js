@@ -51,7 +51,7 @@ passport.deserializeUser(function(user, done) {
 passport.use (new GoogleStrategy({
   clientID: '96689537530-jkk11ojp0i4r1ffq7q6u8idamsm59c9j.apps.googleusercontent.com',
   clientSecret: 'NtXKC_Ba8lAWJGuysBU3ADXm',
-  callbackURL: "http://localhost:3000/auth/google/callback",
+  callbackURL: "https://wissenaire.org/auth/google/callback",
   userProfileURL  : 'https://www.googleapis.com/oauth2/v3/userinfo'
 },
 function(accessToken, refreshToken, profile, done) {
