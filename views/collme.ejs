@@ -144,7 +144,7 @@
 							
 						</div>
 						<div class="col-12 col-md-2 offset-md-2 d-flex justify-content-center align-self-center">
-							<a href=""><img align="center" class="event-img" height="300px" src="./images/pic1.jpg"></a>
+							<a href=""><img align="center" class="event-img" height="300px" src="./images/Colloquia.jpeg"></a>
 						</div>
 					</div>
 				
@@ -195,12 +195,32 @@
 					</button>
 					<noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
 					<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js" type="text/javascript"></script>
-					 <% } else{ %>
-					<button class="contact100-form-btn" style="width: 40%; margin: auto;" onclick="window.location.href='/auth/google';">
-						Register
-						<i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-					</button>
-						<% } %>
+					<% } else{ %>
+						<button class="contact100-form-btn" style="width: 40%; margin: auto;" onclick="alert()">
+							Register
+							<i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+						</button>
+						<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+						<script>
+							function alert(){
+	
+								swal({
+									title: "Authentication Required",
+									text: "You haven't logged in or you haven't filled your profile !",
+									icon: "warning",
+									button: "Do it now :)",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/auth/google"
+									} else {
+										swal("Your imaginary file is safe!");
+									}
+								});
+							}
+						</script>
+							<% } %>
 					<button class="contact100-form-btn btn2" style="width: 40%; margin: auto;" onclick="window.location.href='./pdfs/Colloquia-Mechanical.pdf';">
 						Know More
 						<i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
@@ -267,6 +287,8 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 	<script src="./javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="./javascripts/canvas.js"></script>  
+
 	<script>
 	
 	</script>

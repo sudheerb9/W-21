@@ -50,6 +50,19 @@ router.get('/', function(req, res, next){
   
 })
 
+router.get('/competitions', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('competitions', {participant : rows[0]});
+    })
+  }
+  else res.render('competitions', {participant: false})
+})
+
 router.get('/analogcircuitdesign', function(req, res, next){
   if (req.isAuthenticated()) { 
     console.log('loggedin')
@@ -193,6 +206,19 @@ router.get('/schoolchamp', function(req, res, next){
   else res.render('schoolchamp', {participant: false})
 })
 
+router.get('/sciencetoons', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('sciencetoons', {participant : rows[0]});
+    })
+  }
+  else res.render('sciencetoons', {participant: false})
+})
+
 router.get('/sherlock', function(req, res, next){
   if (req.isAuthenticated()) { 
     console.log('loggedin')
@@ -230,6 +256,19 @@ router.get('/valorant', function(req, res, next){
     })
   }
   else res.render('valorant', {participant: false})
+})
+
+router.get('/workshops', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('workshops', {participant : rows[0]});
+    })
+  }
+  else res.render('workshops', {participant: false})
 })
 
 router.get('/aiml', function(req, res, next){

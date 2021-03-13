@@ -218,19 +218,19 @@ body {
 }}
 
 .site-branding__logo {
-    background-image: url(../images/New\ Logo\ 1.png);
+    background-image: url(../images/logo.png);
     background-size: cover;
-    width: 250px;
-    height: 30.2px;
+    width: 252px;
+    height: 49.2px;
     display: block;
     position: absolute;
-    top: 0;
+    top: -10px;
     right: -40px;
 }
 .site-branding__logo:hover {
   opacity: 1;
-	-webkit-animation: flash 2.5s;
-	animation: flash 2.5s;
+	-webkit-animation:  2.5s;
+	animation:  2.5s;
 }
 @-webkit-keyframes flash {
 	0% {

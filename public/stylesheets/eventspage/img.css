@@ -1,0 +1,280 @@
+.yantrixdot {
+ 
+  background-image: url('imgs/yantrix.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+}
+
+.matricksdot {
+ 
+ background-image: url('imgs/matricks.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+ 
+}
+
+.coloqdot {
+  
+ background-image: url('imgs/coloq.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+  
+}
+
+.landot {
+  
+ background-image: url('imgs/lan.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+ 
+}
+.gacdot {
+  
+ background-image: url('imgs/gac.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+ 
+}
+.onndot {
+  
+ background-image: url('imgs/onn.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+ 
+}
+
+.exsdot {
+ 
+ background-image: url('imgs/exs.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+ 
+}
+
+.scdot {
+  
+ background-image: url('imgs/sc.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+   height: 26vw;
+  width: 26vw;
+  top: 6%;
+  left:6%;
+  
+}
+
+@media only screen and (max-device-width: 400px ){
+
+  .yantrixdot {
+  height: 49vw;
+  width: 49vw;
+  background-image: url('imgs/yantrix.jpg');
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+.matricksdot {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+
+.coloqdot {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+.gacdot {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+.landot{
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+.exsdot {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+.scdot  {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+
+.onndot   {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
+}
+@media only screen and (min-device-width:600px) and (max-device-width: 1100px ){
+
+.yantrixdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+
+.matricksdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+.onndot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+
+.scdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+
+.exsdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+.coloqdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+
+.landot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+
+.gacdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

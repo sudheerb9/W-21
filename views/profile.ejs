@@ -2,6 +2,7 @@
 <head>
     <title>User Profile | Wissenaire'21</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -97,13 +98,20 @@
 
   @media screen and (max-width: 500px){
     .page-navigation-menu >ul >li >i{
-      font-size:4rem !important;
+      font-size:3em !important;
       margin-bottom: 8px;
+    }
+    .large-6{
+      -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+      margin-bottom: 50px;
     }
   }
   a:hover {
     text-decoration: none;
   }
+
 
   
     </style>
@@ -187,17 +195,17 @@
     </div>
     <% if(participant.wissid){
       %>
-    <div class="row" style="margin-top: 100px;">
-        <div class="large-6 col-12 col-md-6">
-            <div class="leaderboard_profile large-11" style="border: 5px solid gold; border-radius: 8px;">
+    <div class="" style="margin-top: 100px;">
+        <div class="col-12 col-md-6">
+            <div class="leaderboard_profile" style="border: 5px solid gold; border-radius: 8px;">
                 <img src="<%=participant.photo%>" style="width: 100%;">
                 <h4 align="center" style="margin-top:0.2em;"><%=participant.name%></h4>
                 <h5 align="center" style=" margin-top:0.15em">Wissenaire ID: <span style="color: gold;"><%=participant.wissid%></span></h5>
                 
             </div>
         </div>
-        <div class="large-6 col-12 col-md-6">
-            <form>
+        <div class="col-12 col-md-6">
+            <form style="width: 100%;">
                 <div class="form-group">
                     <label>Mobile Number (preferably whatsapp)</label>
                     <input type="number" class="form-control" name="phone" value="<%=participant.phone%>" readonly>
@@ -316,7 +324,6 @@
         </main>
     </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 	<script src="./javascripts/jquery.min.js"></script>
 </body>
 </html>
