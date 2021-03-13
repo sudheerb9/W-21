@@ -1,0 +1,274 @@
+<html>
+<head>
+	<title>Colloquia - EE| Wissenaire’21</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
+	<link href="./stylesheets/canvas.css" rel="stylesheet">
+	<link href="./stylesheets/events.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
+	<link href="./stylesheets/navbar.css" rel="stylesheet">
+	<style>
+		@media screen and (max-width: 500px){
+			.page-navigation-menu > ul > li {
+				width: 49% !important;
+				font-size:12px;
+			}
+			.page-navigation-menu > ul > li >i{
+				font-size:2rem;
+				margin-bottom: 8px;
+			}
+			.main > div >a img {
+				margin:0;
+			}
+			.container-fluid{
+				padding: 0px;
+				margin: 0px;
+				width: 100%;
+			}
+			
+		}
+		body{
+			overflow-y: scroll;
+		}
+			
+		
+	</style>
+</head>
+
+<body>
+	<header style="height: 1vh !important;">
+		<div id="navigation" class="">
+			<a class="menu-toggle">
+				<div class="btn-toggle">
+					<div>
+						<div class="before"></div>
+						<div class="after"></div>
+					</div>
+				</div>
+			</a>
+			<nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+						
+			  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+			  <ul>
+				  <% if(participant.name) { %>
+				<li class="open">
+					<i class="icofont-ui-user"></i><br><br><a href="/profile">My Profile</a>
+				  </li>
+				  <% } else { %>
+				<li class="open">
+				  <i class="icofont-sign-in"></i><br><br><a href="/auth/google">Sign In</a>
+				</li>
+				  <% } %>
+				<li>
+				  <i class="icofont-info-circle"></i><br><br><a href="/about">About</a>
+				</li>
+				<li>
+				  <i class="icofont-puzzle"></i><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+				</li>
+				<li>
+				  <i class="icofont-learn"></i><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+				</li>
+				<li>
+				  <i class="icofont-mic"></i><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+				</li>
+				<li>
+				  <i class="icofont-robot"></i><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+				</li>
+				
+				<li>
+				  <i class="icofont-light-bulb"></i><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+				</li>
+				<li>
+				  <i class="icofont-star-alt-1"></i><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+				</li>
+				<li>
+				  <i class="icofont-live-support"></i><br><br><a href="ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+				</li>
+				<li>
+				  <i class="icofont-speech-comments"></i><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+				</li>
+				<li>
+				  <i class="icofont-money"></i><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+				</li>
+				<li>
+				  <i class="icofont-send-mail"></i><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+				</li>
+	
+			  </ul>
+			</nav>
+			
+			<div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+				<a href="/" title="Home" rel="home" class="site-branding__logo"> 
+			<dpan class="sr-only">Wissenaire logo</dpan>
+		  </a>
+		</div>
+		<div class="menu-slide-back">
+		  <span class="icon icon-fonts icon-arrow-back">
+			<span class="sr-only">go back to previous menu</span>
+		  </span>
+		</div>
+	  </div>
+	</header>
+		   
+	<div id="particles-background" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
+	<div id="particles-foreground" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
+	
+	<div class="container-fluid">
+		<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+		<div class="row" style="padding: 0px; margin:0px;">
+		  	<div class="col-md-2 d-none d-md-block justify-content-center align-self-center">
+			  <a class='ar' href="/colloquiace" style="display: block; text-align: center;"> Colloquia-CIVIL &nbsp;<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M23.125 16.1428H12.7431L15.922 12.4056C16.2318 12.0422 16.181 11.5014 15.81 11.1988C15.4381 10.8953 14.8869 10.9451 14.578 11.3085L10.203 16.4514C10.1689 16.4917 10.1514 16.5388 10.126 16.5834C10.105 16.6194 10.0796 16.6502 10.0639 16.6897C10.0245 16.7882 10.0009 16.892 10.0009 16.9965C10.0009 16.9974 10 16.9991 10 17C10 17.0008 10.0009 17.0025 10.0009 17.0034C10.0009 17.108 10.0245 17.2117 10.0639 17.3102C10.0796 17.3497 10.105 17.3805 10.126 17.4165C10.1514 17.4611 10.1689 17.5082 10.203 17.5485L14.578 22.6914C14.7513 22.8946 14.9998 23 15.25 23C15.4478 23 15.6464 22.9349 15.81 22.8011C16.181 22.4986 16.2318 21.9577 15.922 21.5943L12.7431 17.8571H23.125C23.608 17.8571 24 17.4731 24 17C24 16.5268 23.608 16.1428 23.125 16.1428Z" fill="white"/>
+				<path d="M32.25 16.5C32.25 25.1985 25.1985 32.25 16.5 32.25C7.80152 32.25 0.75 25.1985 0.75 16.5C0.75 7.80151 7.80152 0.75 16.5 0.75C25.1985 0.75 32.25 7.80151 32.25 16.5Z" stroke="white" stroke-width="1.5"/>
+				</svg> </a>
+		    </div>
+			
+		  	<div class="col-12 col-md-8">
+				<div class="container-fluid">
+					<div class="row main" style="padding: 0px; margin:0px;">
+						<div class="col-12 col-md-6 d-flex justify-content-center align-self-center">
+							<div class="row">
+								<div class="col-12">
+									<h2 align="center" style="font-size: 1.6em; line-height:1.2;">Colloquia - EE</h2>
+								</div><br><br>
+								
+							</div>							
+							
+						</div>
+						<div class="col-12 col-md-2 offset-md-2 d-flex justify-content-center align-self-center">
+							<a href=""><img align="center" class="event-img" height="300px" src="./images/pic1.jpg"></a>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		  	<div class="col-md-2 d-none d-md-block justify-content-center align-self-center">
+		  		<a class='ar' href="/colloquiame" style="display: block; text-align: center;"> <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M9.875 16.8572L20.2569 16.8572L17.078 20.5944C16.7682 20.9578 16.819 21.4986 17.19 21.8012C17.5619 22.1046 18.1131 22.0549 18.422 21.6915L22.797 16.5486C22.8311 16.5083 22.8486 16.4612 22.874 16.4166C22.895 16.3806 22.9204 16.3498 22.9361 16.3103C22.9755 16.2118 22.9991 16.108 22.9991 16.0035C22.9991 16.0026 23 16.0009 23 16C23 15.9992 22.9991 15.9975 22.9991 15.9966C22.9991 15.892 22.9755 15.7883 22.9361 15.6898C22.9204 15.6503 22.895 15.6195 22.874 15.5835C22.8486 15.5389 22.8311 15.4918 22.797 15.4515L18.422 10.3086C18.2488 10.1054 18.0003 10 17.75 10C17.5523 10 17.3536 10.0651 17.19 10.1989C16.819 10.5014 16.7683 11.0423 17.078 11.4057L20.2569 15.1429L9.875 15.1429C9.392 15.1429 9 15.5269 9 16C9 16.4732 9.392 16.8572 9.875 16.8572Z" fill="white"/>
+				<path d="M0.749998 16.5C0.749998 7.80151 7.80151 0.750002 16.5 0.750002C25.1985 0.750003 32.25 7.80152 32.25 16.5C32.25 25.1985 25.1985 32.25 16.5 32.25C7.80151 32.25 0.749997 25.1985 0.749998 16.5Z" stroke="white" stroke-width="1.5"/>
+				</svg> &nbsp; Colloquia-MECH
+				</a>
+			</div>
+		</div>
+		<a href="#intro" class="knowmore-btn d-none d-md-block" style="margin: 0 0.5rem; text-decoration: none; color: white;">
+            <i class="icofont-simple-down animate__infinite	animate__animated animate__fadeInDownBig"></i>
+        </a>
+	</div>
+	
+
+	<br>
+	<br>
+	<br>
+	
+	
+
+	<div class="container" id="intro">
+		<p style="color: white; font-size: 18px;text-align: center; font-style: italic;">" An investment in knowledge always pays the best interest".<br></p>
+		<p style="color: white; font-size: 18px;">
+            As rightly stated by Benjamin
+            Franklin, a small idea when given a right platform can create wonders in this world. So here we
+            present you an opportunity to manifest your ideas before the esteemed judges and inquisitive
+            audience at one of the most awaited tech-fest of east India - colloquia, the power point presentation
+            event of Wissenaire’21. It is a one of the greatest platforms that brings together all the talented
+            thinkers around the country to present, discuss and develop their skills. So, what are you waiting
+            for? Grab this opportunity and reserve your seat for a technical evening to express and explore
+            yourself. And let your knowledge find solutions to advance technology for humanity.</p>
+
+		
+		<div class="row" style="margin-top: 10vh;">
+			<div class="col-12 col-md-6" style="height: 0px;" ></div>
+			<div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+				<div class="row">
+					<% console.log(participant);
+					 if (participant.name) { %>
+					<button class="contact100-form-btn" style="width: 40%; margin: auto;" onclick="popup('analog-circuit-design-132014');">
+						Register
+						<i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+					</button>
+					<noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
+					<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js" type="text/javascript"></script>
+					 <% } else{ %>
+					<button class="contact100-form-btn" style="width: 40%; margin: auto;" onclick="window.location.href='/auth/google';">
+						Register
+						<i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+					</button>
+						<% } %>
+					<button class="contact100-form-btn btn2" style="width: 40%; margin: auto;" onclick="window.location.href='./pdfs/Colloquia-Electrical.pdf';">
+						Know More
+						<i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+					</button>
+					
+				</div>
+			</div>
+			<div class="col-12 col-md-6" style="margin-top: 2.5%;">
+				
+				
+				<p style="color: white; font-weight: 650; font-size: 28px;"> Event Format </p>
+				<p style="color:#fff; line-height: 2;"> Round-1:<br>
+                    • Participants have to mail the PowerPoint presentation files selecting their topic of interest
+                    provided in the list of domains.<br>
+                    • Participants should submit their PowerPoint presentation files to
+                    competitions.wissenaire@gmail.com with the subject of mail as “Colloquia EE – Registration
+                    Id”.<br>
+                    • Complete details of all participants, taking part in the presentation, should be mentioned in the
+                    submission.<br>
+                    • Specify topic of the presentation as the heading of the submission
+                    • Last date for submission is to 19th march, 2021.<br>
+                    Round-2:<br>
+                    On the basis of the submissions we receive, respective teams will be selected, purely based on the
+                    1st round, for the final demonstration. This round will be online mode and will take place in MS
+                    teams. A confirmation mail will be sent to the selected teams, to take part in the event during
+                    Wissenaire 2021.			</p>
+
+                <p style="color: white; font-weight: 650; font-size: 28px;">Domains For Reference</p>
+                <p style="color:#fff;">Enclosed in pdf (Check Know More) </p>
+				
+				
+			</div>
+			<div class="col-12 col-md-6">
+				<br>
+				<p style="color: white; font-weight: 650; font-size: 28px;"> Formation Rules </p>
+				<p style="color:#fff; line-height: 2;"><i class="fa fa-check"></i>  Maximum number of participants in the team should not exceed 3.<br>
+                    <i class="fa fa-check"></i>  No participant can take part in more than one team.<br>
+                    <i class="fa fa-check"></i>  Each participant should have their respective college ID proof.<br>
+                    <i class="fa fa-check"></i>  It is not obligatory that the participants forming a team should be from the same college.<br>
+                    <i class="fa fa-check"></i>  Any number of teams can come from the same college, there’s no restriction for it.</p>
+			<!-- </div>
+
+            <div class="col-12 col-md-6"> -->
+				<br>
+				<p style="color: white; font-weight: 650; font-size: 28px;">  Presentation Rules </p>
+				<p style="color:#fff; line-height: 2;"><i class="fa fa-check"></i> Presentation should not exceed 15 minutes. <br>
+                    <i class="fa fa-check"></i> The maximum time allotted for single presentation is 12 minutes, followed by a queries section for
+                    3 minutes.<br>
+                    <i class="fa fa-check"></i> Presentation crossing the allotted time, damages the score.<br>
+                    <i class="fa fa-check"></i> Plagiarism is not encouraged.<br>
+                    <i class="fa fa-check"></i> Presentation will be done via MS teams</p>
+			</div>
+
+			<div class="col-12 col-md-6">
+				<p style="color: white; font-weight: 650; font-size: 28px;"> Contact</p>
+				<p style="color:#fff; line-height: 2;"><i class="fa fa-user"></i>&ensp;Deepthi Sai P<br>
+				<i class="fa fa-award"></i>&ensp;Event Co-ordinator<br>
+				<i class="fa fa-envelope"></i>&ensp;pds12@iitbbs.ac.in<br>
+				<i class="fa fa-phone"></i>&ensp;8688198270</p>
+			</div>
+		</div>
+	
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+	<script src="./javascripts/jquery.min.js"></script>
+	<script>
+	
+	</script>
+</body>
+</html>

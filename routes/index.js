@@ -35,6 +35,7 @@ function ensureProfile(req,res,next){
   })
 }
 
+//start
 router.get('/', function(req, res, next){
   if (req.isAuthenticated()) { 
     console.log('loggedin')
@@ -49,7 +50,6 @@ router.get('/', function(req, res, next){
   
 })
 
-
 router.get('/analogcircuitdesign', function(req, res, next){
   if (req.isAuthenticated()) { 
     console.log('loggedin')
@@ -61,8 +61,243 @@ router.get('/analogcircuitdesign', function(req, res, next){
     })
   }
   else res.render('acd', {participant: false})
-  
 })
+
+router.get('/colloquiacs', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('collcs', {participant : rows[0]});
+    })
+  }
+  else res.render('collcs', {participant: false})
+})
+
+router.get('/colloquiace', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('collce', {participant : rows[0]});
+    })
+  }
+  else res.render('collce', {participant: false})
+})
+
+router.get('/colloquiaee', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('collee', {participant : rows[0]});
+    })
+  }
+  else res.render('collee', {participant: false})
+})
+
+router.get('/colloquiame', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('collme', {participant : rows[0]});
+    })
+  }
+  else res.render('collme', {participant: false})
+})
+
+router.get('/countercypher', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('ccyp', {participant : rows[0]});
+    })
+  }
+  else res.render('ccyp', {participant: false})
+})
+
+router.get('/csgo', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('csgo', {participant : rows[0]});
+    })
+  }
+  else res.render('csgo', {participant: false})
+})
+
+router.get('/mathsolympiad', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('mo', {participant : rows[0]});
+    })
+  }
+  else res.render('mo', {participant: false})
+})
+
+router.get('/ml', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('ml', {participant : rows[0]});
+    })
+  }
+  else res.render('ml', {participant: false})
+})
+
+router.get('/pioneersplan', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('pio', {participant : rows[0]});
+    })
+  }
+  else res.render('pio', {participant: false})
+})
+
+router.get('/schoolchamp', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('schoolchamp', {participant : rows[0]});
+    })
+  }
+  else res.render('schoolchamp', {participant: false})
+})
+
+router.get('/sherlock', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('sherlock', {participant : rows[0]});
+    })
+  }
+  else res.render('sherlock', {participant: false})
+})
+
+router.get('/shutter', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('shutter', {participant : rows[0]});
+    })
+  }
+  else res.render('shutter', {participant: false})
+})
+
+router.get('/valorant', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('valorant', {participant : rows[0]});
+    })
+  }
+  else res.render('valorant', {participant: false})
+})
+
+router.get('/aiml', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('aiml', {participant : rows[0]});
+    })
+  }
+  else res.render('aiml', {participant: false})
+})
+
+router.get('/android', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('android', {participant : rows[0]});
+    })
+  }
+  else res.render('android', {participant: false})
+})
+
+router.get('/automobiles', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('automob', {participant : rows[0]});
+    })
+  }
+  else res.render('automob', {participant: false})
+})
+
+router.get('/bridgedesign', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('bridge', {participant : rows[0]});
+    })
+  }
+  else res.render('bridge', {participant: false})
+})
+
+router.get('/cybersecurity', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('cyber', {participant : rows[0]});
+    })
+  }
+  else res.render('cyber', {participant: false})
+})
+
+//done.
 
 router.get('/profile',ensureAuthenticated, function(req, res, next) {
   const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");

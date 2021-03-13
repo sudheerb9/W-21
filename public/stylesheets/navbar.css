@@ -216,21 +216,16 @@ body {
     font-size: 14px;
     line-height: 1.42857;
 }}
-@media screen and (max-width: 767px){
- .site-branding__logo {
-    background-size: 40px 40px;
-    width: 40px;
-    height: 40px;
-}}
+
 .site-branding__logo {
-    background-image: url(../images/wiss_19_logo.png);
+    background-image: url(../images/New\ Logo\ 1.png);
     background-size: cover;
-    width: 330px;
-    height: 60px;
+    width: 250px;
+    height: 30.2px;
     display: block;
     position: absolute;
-    top: -15px;
-    right: 0px;
+    top: 0;
+    right: -40px;
 }
 .site-branding__logo:hover {
   opacity: 1;
@@ -435,29 +430,16 @@ a {
   width: 0px !important;
 }
 
-::-webkit-scrollbar-track {
+:-webkit-scrollbar-track {
   background: transparent; 
 }
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
+:-webkit-scrollbar-thumb {
   background: #555; 
 }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+:-webkit-scrollbar-thumb:hover {
   background: #888; 
 }
-@media screen and (max-width: 500px){
-  .page-navigation-menu > ul > li {
-    width: 49% !important;
-    font-size:12px;
-  }
-  .page-navigation-menu >ul >li >i{
-    font-size:2rem;
-    margin-bottom: 8px;
-  }
-}
+
 
 #stars {
   width: 1px;
@@ -547,4 +529,33 @@ transform: translateY(0px) ;
 transform: translateY(-5px) ;
 /* filter: drop-shadow(0 0 5px rgba(5, 241, 255, 0.5)); */
 }
+}
+
+@media screen and (max-width: 425px){
+  .btn-toggle {
+    width: 32px;
+    height: 12px;
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    display: block;
+  }
+  
+  .page-navigation-menu > ul > li {
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    font-family: "Helvetica Neue Medium","Arial","san-serif";
+    font-weight: normal;
+    width: 49%;
+  }
 }

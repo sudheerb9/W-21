@@ -1,10 +1,11 @@
 <html>
 <head>
 	<title>Wissenaire’21</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
 	<link href="./stylesheets/home.css" rel="stylesheet">
@@ -16,12 +17,34 @@
 	<link href="./stylesheets/navbar.css" rel="stylesheet">
   <style>
     body{
-      height:100vh;
-      overflow-y: hidden;
-	  background-color: rgb(0, 0, 0);
+		width: 100vw;
+		background-color: rgb(0, 0, 0);
     }
 	a:hover{
 		text-decoration: none !important;
+	}
+	.gifdiv{
+		width: 100vw;
+	}
+	#gifimage{
+		display: block;
+		margin: auto; 
+		width: 65%;
+		height: auto;
+	}
+	@media screen and (max-width: 500px) {
+		.gifdiv{
+			width: 100vw;
+		}
+		#gifimage{
+			display: block;
+			margin: auto; 
+			width: 100%;
+			height: auto;
+			position: relative;
+			top: 15%;
+		}
+			
 	}
   </style>
 </head>
@@ -101,16 +124,18 @@
 	  </div>
 	</header>
 
-  <img src="./images/Contact us.png" style="position:absolute; top:20%; right:20%; height:70px; animation: book 2s ease-in-out infinite;" >
-  <img src="./images/Events icon.png" style="position:absolute; top:60%; right:90%; height:70px; animation: book 2s ease-in-out infinite;" >
-  <img src="./images/initiatives icon 1.png" style="position:absolute; top:60%; right:2%; height:70px; animation: book 2s ease-in-out infinite;" >
-  <img src="./images/workshops.png" style="position:absolute; top:20%; right:80%; height:70px; animation: book 2s ease-in-out infinite;">
+  <img src="./images/Contact.png" class="d-none d-md-block" style="position:absolute; top:20%; right:20%; height:70px; animation: book 2s ease-in-out infinite;" >
+  <img src="./images/Competitions.png" class="d-none d-md-block" style="position:absolute; top:60%; right:90%; height:70px; animation: book 2s ease-in-out infinite;" >
+  <img src="./images/Initiatives.png" class="d-none d-md-block" style="position:absolute; top:60%; right:2%; height:70px; animation: book 2s ease-in-out infinite;" >
+  <img src="./images/workshops.png" class="d-none d-md-block" style="position:absolute; top:20%; right:80%; height:70px; animation: book 2s ease-in-out infinite;">
 
    
-  <div id="particles-background" class="vertical-centered-box"><canvas class="pg-canvas" width="2760" height="303" style="display: block;"></canvas></div>
-  <div id="particles-foreground" class="vertical-centered-box"><canvas class="pg-canvas" width="2760" height="303" style="display: block;"></canvas></div>
+  <div id="particles-background" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
+  <div id="particles-foreground" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
   
-  <div id="gifimage" style="z-index:-10"> <img id="gifimage" src="./images/robogif.gif"></div>
+  <div id="gifimage" style="z-index:-10">
+	<img class="justify-content-center align-self-center" id="gifimage" src="./images/final.gif">
+  </div>
    
   <script type="text/javascript" src="./javascripts/canvas.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
