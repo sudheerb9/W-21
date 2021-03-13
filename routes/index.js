@@ -338,6 +338,110 @@ router.get('/cybersecurity', function(req, res, next){
 
 //done.
 
+router.get('/about', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/guestlectures', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/exhibits', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/initiatives', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/highlights', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/team', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/sponsors', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
+router.get('/contact', function(req, res, next){
+  if (req.isAuthenticated()) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('comingsoon', {participant : rows[0]});
+    })
+  }
+  else res.render('comingsoon', {participant: false})
+})
+
 router.get('/profile',ensureAuthenticated, function(req, res, next) {
   const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
   conn.query(qr, (err, rows) => {
