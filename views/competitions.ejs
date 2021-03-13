@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events W'21</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/yanthrix.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/matricks.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/col.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/lan.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/garc.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/onnet.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/exsu.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/eventspage/img.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <style >
+ 
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+  	#particles-background,
+#particles-foreground {
+  position: fixed;
+  left: -51%;
+  top: -51%;
+  width: 202%;
+  height: 202%;
+  -webkit-transform: scale3d(0.5, 0.5, 1);
+  -moz-transform: scale3d(0.5, 0.5, 1);
+  -ms-transform: scale3d(0.5, 0.5, 1);
+  -o-transform: scale3d(0.5, 0.5, 1);
+  transform: scale3d(0.5, 0.5, 1);
+  overflow:hidden;
+}
+#particles-background {
+  background: transparent;
+  overflow:hidden;
+}
+.canvaswrapper{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.knowmore {
+  display: block;
+  position:absolute;
+  top: 70%;
+  left:32.5%;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, .6);
+  margin: 20px 0px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  transition: all .2s;
+  z-index: 100;
+  
+}
+.knowmore button:hover {
+  background: rgba(255, 255, 255, .8);
+  color: black;
+  box-shadow: 0 0 10px rgba(255,255,255,.5);
+  mix-blend-mode: screen;
+}
+
+@media only screen and (max-device-width: 400px ){
+
+  .knowmore {
+  display: block;
+  position:absolute;
+  top: 110%;
+  left:12.5%;
+
+  }
+}
+
+
+  </style>
+
+
+</head>
+
+<body style="background: black;">
+<script>
+  AOS.init();
+</script> 
+<div class="canvaswrapper">
+<div id="particles-background" class="vertical-centered-box" ></div> 
+<div id="particles-foreground" class="vertical-centered-box" ></div> 
+</div>
+
+<div class="container" > 
+  
+		<div class="row ">
+			<div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+				 
+
+
+
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+     <span class="yantrixdot">
+
+    <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+      <ul class="navigation-circle__list">
+        <li class="navigation-circle-list-yan"><a class="navigation-circle-list-yan__point" onclick="onClick(1)" onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Drone Challenge
+              </h3>
+             
+             <!-- <h4 class="navigation-circle-list-yan__subtitle">It just goes round and round</h4>-->
+            </div></a></li>
+        <li class="navigation-circle-list-yan"><a class="navigation-circle-list-yan__point" onclick="onClick(2)" onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Trekkon
+              </h3>
+            </div></a></li>
+         <!--  <li class="navigation-circle-list-yan"><a class="navigation-circle-list-yan__point" onclick="onClick(3)" onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Item #3
+              </h3>
+              <h4 class="navigation-circle-list-yan__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        <li class="navigation-circle-list-yan"><a class="navigation-circle-list-yan__point" onclick="onClick(4)" onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Item #4
+              </h3>
+              <h4 class="navigation-circle-list-yan__subtitle">It just goes round and round</h4>
+            </div></a></li>
+     <li class="navigation-circle-list-yan"><a class="navigation-circle-list-yan__point" onclick="onClick(5)" onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Item #5
+              </h3>
+              <h4 class="navigation-circle-list-yan__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        <li class="navigation-circle-list-yan"><a class="navigation-circle-list-yan__point" onclick="onClick(6)" onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Item #6
+              </h3>
+              <h4 class="navigation-circle-list-yan__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        <li class="navigation-circle-list-yan"><a  href ="https://wissenaire.org/"class="navigation-circle-list-yan__point" onclick="onClick(7)" onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-yan__meta">
+              <h3 class="navigation-circle-list-yan__title">Item #7
+              </h3>
+              <h4 class="navigation-circle-list-yan__subtitle">It just goes round and round</h4>
+            </div></a></li> -->
+      </ul>
+    </div>
+  </div>
+			</div>
+
+			<div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+				<div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500"><h2>Yanthrix</h2></div>
+				
+			<div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">	<p>Yanthrix collectively represents all the robotics events of the fest. The events are noted for promoting a spirit of technology among techies. All events under Yanthrix are designed to test the team-work and dedication of competing groups of students with competitions like Kick-Off, Robo-Wars, Rescue-Bot, and Maze-Solver etc.</p></div>
+
+			</div>
+		</div>
+    <!--end of yanthrix -->
+
+    <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+         
+
+
+
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1000">
+     <span class="matricksdot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+      <ul class="navigation-circle__list">
+        
+        <li class="navigation-circle-list-mat"><a class="navigation-circle-list-mat__point" onclick="onClick(3)" onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-mat__meta">
+              <h3 class="navigation-circle-list-mat__title">ML
+              </h3>
+            </div></a></li>
+        
+        <li class="navigation-circle-list-mat"><a class="navigation-circle-list-mat__point" onclick="onClick(5)" onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-mat__meta">
+              <h3 class="navigation-circle-list-mat__title">Counter Cypher
+              </h3>
+            </div></a></li>
+        
+      <!--  <li class="navigation-circle-list-mat"><a  href ="https://wissenaire.org/"class="navigation-circle-list-mat__point" onclick="onClick(7)" onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-mat__meta">
+              <h3 class="navigation-circle-list-mat__title">Item #7
+              </h3>
+              <h4 class="navigation-circle-list-mat__subtitle">It just goes round and round</h4>
+            </div></a></li> -->
+      </ul>
+    </div>
+  </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+       <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500"> <h2>Matricks</h2></div>
+        
+       <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">   <p>With the present world being digitalized, Wissenaire creates a platform to
+         develop one's creativity and critical thinking skills in practical situations 
+         with brain-teasing problem statements involving Coding, CAD designing, App development, 
+         Solid Works etc
+        </p></div>
+
+      </div>
+    </div>
+    <!-- end of matricks -->
+
+    <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1000">
+     <span class="coloqdot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+      <ul class="navigation-circle__list">
+        <li class="navigation-circle-list-col"><a class="navigation-circle-list-col__point" onclick="onClick(1)" onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-col__meta">
+              <h3 class="navigation-circle-list-col__title">Civil
+              </h3>
+            </div></a></li>
+        <li class="navigation-circle-list-col"><a class="navigation-circle-list-col__point" onclick="onClick(2)" onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-col__meta">
+              <h3 class="navigation-circle-list-col__title">Mechanical
+              </h3>
+            </div></a></li>
+        <li class="navigation-circle-list-col"><a class="navigation-circle-list-col__point" onclick="onClick(3)" onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-col__meta">
+              <h3 class="navigation-circle-list-col__title"> Computer Science
+              </h3>
+            </div></a></li>
+      
+        <li class="navigation-circle-list-col"><a  href ="https://wissenaire.org/"class="navigation-circle-list-col__point" onclick="onClick(7)" onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-col__meta">
+              <h3 class="navigation-circle-list-col__title"> Electrical
+              </h3>
+            </div></a></li>
+              </ul>
+    </div>
+  </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+    <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500">    <h2>Colloquia</h2> </div>
+        
+      <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">    <p>The Paper Presentation event of Wissenaire aims at tapping the infinite potential of the human mind in generating an “idea”, which when given a proper platform can transform into a great new discovery or innovation. The colloquia cover various streams like Civil Engineering, Electrical Engineering, Mechanical Engineering and Computer Science Engineering</p></div>
+      </div>
+    </div>
+<!-- end of colloqia -->
+
+<div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+     <span class="landot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+      <ul class="navigation-circle__list">
+        <li class="navigation-circle-list-lan"><a class="navigation-circle-list-lan__point" onclick="onClick(1)" onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-lan__meta">
+              <h3 class="navigation-circle-list-lan__title">Valorant
+              </h3>
+            </div></a></li>
+        <li class="navigation-circle-list-lan"><a class="navigation-circle-list-lan__point" onclick="onClick(2)" onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-lan__meta">
+              <h3 class="navigation-circle-list-lan__title">Counter Strike
+              </h3>
+            </div></a></li>
+      
+      </ul>
+    </div>
+  </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+     <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1500">   <h2>LAN Wars</h2> </div>
+        
+      <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">    <p>Are you a hardcore gamer? Does the rattle of guns turn you on?
+The time has come to blend your style and experience on a global competitive stage. Enter the
+Battlefield and show your mettle in this virtual war.  So, what are you waiting for?Gear up and ready your guns.
+Battle hard and be the last one standing!! </p></div>
+      </div>
+    </div>
+<!-- end of lan wars -->
+<div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+         
+
+
+
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+     <span class="gacdot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+      <ul class="navigation-circle__list">
+        <li class="navigation-circle-list-garc"><a class="navigation-circle-list-garc__point" onclick="onClick(1)" onmouseenter="calculateOffset(1)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Analog Circuit desing
+              </h3>
+            </div></a></li>
+        <li class="navigation-circle-list-garc"><a class="navigation-circle-list-garc__point" onclick="onClick(2)" onmouseenter="calculateOffset(2)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Maths Olympaid
+              </h3>
+            </div></a></li>
+       <!--  <li class="navigation-circle-list-garc"><a class="navigation-circle-list-garc__point" onclick="onClick(3)" onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Item #3
+              </h3>
+              <h4 class="navigation-circle-list-garc__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        <li class="navigation-circle-list-garc"><a class="navigation-circle-list-garc__point" onclick="onClick(4)" onmouseenter="calculateOffset(4)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Item #4
+              </h3>
+              <h4 class="navigation-circle-list-garc__subtitle">It just goes round and round</h4>
+            </div></a></li>
+       <li class="navigation-circle-list-garc"><a class="navigation-circle-list-garc__point" onclick="onClick(5)" onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Item #5
+              </h3>
+              <h4 class="navigation-circle-list-garc__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        <li class="navigation-circle-list-garc"><a class="navigation-circle-list-garc__point" onclick="onClick(6)" onmouseenter="calculateOffset(6)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Item #6
+              </h3>
+              <h4 class="navigation-circle-list-garc__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        <li class="navigation-circle-list-garc"><a  href ="https://wissenaire.org/"class="navigation-circle-list-garc__point" onclick="onClick(7)" onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-garc__meta">
+              <h3 class="navigation-circle-list-garc__title">Item #7
+              </h3>
+              <h4 class="navigation-circle-list-garc__subtitle">It just goes round and round</h4>
+            </div></a></li> -->
+      </ul>
+    </div>
+  </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+    <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1500">    <h2>Grand Arcanum</h2></div>
+        
+     <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">     <p>The Grand Arcanum includes all design and thinking competitions like Electronix (circuit designing), Stimulant (water-propelled rocket designing), and Smart City Challenge etc.</p></div>
+
+      </div>
+    </div>
+    <!--end of grand arcanum -->
+
+    <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+     <span class="onndot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+      <ul class="navigation-circle__list">
+        
+        <li class="navigation-circle-list-onet"><a class="navigation-circle-list-onet__point" onclick="onClick(3)" onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-onet__meta">
+              <h3 class="navigation-circle-list-onet__title">Science Toons
+              </h3>
+            </div></a></li>
+        
+        <li class="navigation-circle-list-onet"><a class="navigation-circle-list-onet__point" onclick="onClick(5)" onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-onet__meta">
+              <h3 class="navigation-circle-list-onet__title">Sherlock
+              </h3>
+            </div></a></li>
+        
+        <li class="navigation-circle-list-onet"><a  href ="https://wissenaire.org/"class="navigation-circle-list-onet__point" onclick="onClick(7)" onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-onet__meta">
+              <h3 class="navigation-circle-list-onet__title">Shutter
+              </h3>
+            </div></a></li>
+      </ul>
+    </div>
+  </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+     <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500">   <h2>On Net</h2></div>
+       <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">   <p>writeup needed
+        </p></div>
+      </div>
+    </div>
+
+    <!-- end of on net -->
+
+        
+       <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1000">
+     <span class="exsdot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+    <!--  <ul class="navigation-circle__list">
+        
+        <li class="navigation-circle-list-exsu"><a class="navigation-circle-list-exsu__point" onclick="onClick(3)" onmouseenter="calculateOffset(3)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-exsu__meta">
+              <h3 class="navigation-circle-list-exsu__title">Item #3
+              </h3>
+              <h4 class="navigation-circle-list-exsu__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        
+        <li class="navigation-circle-list-exsu"><a class="navigation-circle-list-exsu__point" onclick="onClick(5)" onmouseenter="calculateOffset(5)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-exsu__meta">
+              <h3 class="navigation-circle-list-exsu__title">Item #5
+              </h3>
+              <h4 class="navigation-circle-list-exsu__subtitle">It just goes round and round</h4>
+            </div></a></li>
+        
+        <li class="navigation-circle-list-exsu"><a  href ="https://wissenaire.org/"class="navigation-circle-list-exsu__point" onclick="onClick(7)" onmouseenter="calculateOffset(7)" onMouseLeave="onMouseLeave()">
+            <div class="navigation-circle-list-exsu__meta">
+              <h3 class="navigation-circle-list-exsu__title">Item #7
+              </h3>
+              <h4 class="navigation-circle-list-exsu__subtitle">It just goes round and round</h4>
+            </div></a></li>
+      </ul>-->
+    </div>
+  </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+       <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1500"> <h2>Executive Suite</h2></div>
+      <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">    <p>Executive Suite encompasses all the events under management and is a test of the innovative and managerial skills of the students
+        </p></div>
+      </div>
+    </div>
+     <!-- end of executive suite -->
+
+   <!-- <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+     
+    </div>
+  </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+       <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1500"> <h2>Quizzaire</h2></div>
+       <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">   <p>writeup needed
+        </p></div>
+      </div>
+    </div> -->
+<!-- end of quizzaire -->
+
+<!-- <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="2" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+     
+    </div>
+  </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+       <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500"> <h2>Memory Challenge</h2> </div>
+      <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">    <p>writeup needed
+        </p></div>
+      </div>
+    </div> -->
+    <!-- end of memory Challenge -->
+
+<div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1000">
+     <span class="scdot">
+       <button  onclick="location.href = 'https://wissenaire.org/events.php';" class="knowmore">KNOW MORE</button>
+     </span>
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+     
+    </div>
+  </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+       <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500"> <h2>School Champ</h2></div>
+       <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">   <p>It is an event for school children of 8- 10 class 
+        which includes written exam, memory test and an interview.
+         This event also includes seminars aimed at inculcating curiosity towards the
+          technical advancements happening across the globe.
+        </p></div>
+      </div>
+    </div>
+    <!-- end of School Champ -->
+<!-- 
+    <div class="row ">
+      <div class="col-lg-6 col-sm-12  d-flex justify-content-center ">
+  <div class="navigation-circle" data-aos="zoom-in-down" data-aos-easing="#example-easing"
+       
+     data-aos-duration="1000">
+    <div class="navigation-circle__inner">
+      <svg class="navigation-circle-svg navigation-circle-svg--opaque" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle cx="160" cy="160" r="158" fill="none" stroke-width="1" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dashoffset:0;stroke-dasharray:none;"></circle>
+      </svg>
+      <svg class="navigation-circle-svg navigation-circle-svg--mask" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 320 320" style="enable-background:new 0 0 320 320">
+        <circle id="mask-circle" cx="160" cy="160" r="158" fill="none" stroke-width="4" stroke="#0d47a1" stroke-linecap="round" stroke-miterlimit="10" style="stroke-dasharray:1005.3088px;"></circle>
+      </svg>
+     
+    </div>
+  </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center  text-white event_des_col ">
+      <div data-aos="zoom-in-down" data-aos-easing="#example-easing"
+        
+     data-aos-duration="1500">  <h2>National Coding Olympiad</h2> </div>
+      <div data-aos="fade-left"
+     data-aos-easing="#example-easing"
+    
+     data-aos-duration="1500">    <p>Wissenaire '21 is collaborating with SuperTeacher Edureforms to organize the National Coding Olympiad for juniors. Through this olympiad, we aim to encourage creativity and help school kids develop some cool coding skills.
+        </p></div>
+      </div>
+    </div>
+    
+</div> -->
+    <!-- end of Qwissenaire -->
+
+
+
+
+
+
+
+  	
+    <script src="./javascripts/canvas.js" ></script>
+</body>
+</html>
