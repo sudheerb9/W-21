@@ -455,7 +455,7 @@ router.get('/profile',ensureAuthenticated, function(req, res, next) {
   })
 });
 
-router.post('/profile', ensureAuthenticated, function(req,res,next){
+router.post('/profilefill', ensureAuthenticated, function(req,res,next){
   const id = ("SELECT * FROM `users` WHERE email = '"+ req.body.email+"'");
     conn.query(id, (err, rows)=>{
       if(err) throw err;
