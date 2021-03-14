@@ -277,6 +277,7 @@
               $("#form").submit(function(e) {
                 e.preventDefault(); 
                 var form = $(this);
+                console.log('ok')
                 $.ajax({
                     type: "POST",
                     url: '/profile',
