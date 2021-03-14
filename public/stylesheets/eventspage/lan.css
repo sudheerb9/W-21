@@ -269,9 +269,19 @@
 }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 1000px )  {
- .navigation-circle-list-lan__title{
-   font-size: 2.5rem;
-  
+  .navigation-circle-list-lan__meta {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    transform-origin: center;
+    margin-left: 40px;
+    min-width: 30px; 
+    padding: 4px;
+  }
+
+  .navigation-circle-list-lan__title{
+    font-size: 1rem;  
   }
   .navigation-circle-list-lan__subtitle{
     font-size: 1.5rem;

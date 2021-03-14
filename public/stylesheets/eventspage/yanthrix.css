@@ -269,27 +269,38 @@
 }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 1000px )  {
- .navigation-circle-list-yan__title{
-   font-size: 2.5rem;
-  
+ 
+  .navigation-circle-list-yan__meta {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    transform-origin: center;
+    margin-left: 40px;
+    min-width: 30px; 
+    padding: 4px;
+  }
+
+  .navigation-circle-list-yan__title{
+    font-size: 1rem;  
   }
   .navigation-circle-list-yan__subtitle{
     font-size: 1.5rem;
   }
   .navigation-circle {
-  display: block;
-  position: relative;
-  height: 60vh;
-  width: 60vw;
-  margin-top: 10vh;
+    display: block;
+    position: relative;
+    height: 60vh;
+    width: 60vw;
+    margin-top: 10vh;
   }
   .navigation-circle__list {
-  display: block;
-  position: absolute;
-  height: 60vw;
-  width: 60vw;
-  transform: rotate(-90deg);
-  animation: 2.2s cubic-bezier(0.25, -0.25, 0.35, 1) 0 1 animate-in-list forwards;
+    display: block;
+    position: absolute;
+    height: 60vw;
+    width: 60vw;
+    transform: rotate(-90deg);
+    animation: 2.2s cubic-bezier(0.25, -0.25, 0.35, 1) 0 1 animate-in-list forwards;
   }
 
 }
