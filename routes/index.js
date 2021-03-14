@@ -466,10 +466,10 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
       else if(rows[0].id < 1000) wissid = 'W21R10' + rows[0].id;
       else wissid = 'W21R1' + rows[0].id;
       const qr = ("UPDATE users SET wissid = '"+wissid+"', phone = '"+req.body.phone+"', institute = '"+req.body.institute+"', year = '"+req.body.year+"', city = '"+req.body.city+"', caref = '"+req.body.caref+"' WHERE email = '"+req.user.emails[0].value+"' ;");
-      conn.query(qr, (err, rows)=>{
+      conn.query(qr, (err, res)=>{
         if(err) throw err;
-        console.log(rows);
-        request.get("https://fundraiser.wissenaire.org/mainmail.php?name='"+req.user.displayName+"'&phone='"+req.body.phone+"'&wissid='"+wissid+"'")
+        console.log(res);
+        request.get("https://fundraiser.wissenaire.org/mainmail.php?name='"+rows[0].name+"'&phone='"+req.body.phone+"'&wissid='"+wissid+"'")
         .on('response', function(response) {
           console.log(response.statusCode) ;
         });
