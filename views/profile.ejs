@@ -205,7 +205,6 @@
             </div>
         </div>
         <div class="col-12 col-md-6">
-            <form style="width: 100%;">
                 <div class="form-group">
                     <label>Mobile Number (preferably whatsapp)</label>
                     <input type="number" class="form-control" name="phone" value="<%=participant.phone%>" readonly>
@@ -230,7 +229,6 @@
                     <input type="text" class="form-control" name="caref" value="<%=participant.caref%>" readonly>
                 </div>
                 
-            </form>
         </div>
     </div>
     <% }  else {
@@ -245,7 +243,7 @@
             </div>
         </div>
         <div class="large-6 col-12 col-md-6">
-            <form id="form">
+            <form>
                 <div class="form-group">
                     <label>Mobile Number (preferably whatsapp)</label>
                     <input type="number" class="form-control" name="phone" placeholder="Enter your phone number" required>
@@ -274,9 +272,9 @@
 
             </form>
             <script>
-              $("#form").submit(function(e) {
+              $("form").submit(function(e) {
                 e.preventDefault(); 
-                var form = $('#form');
+                var form = $(this);
                 console.log('ok')
                 $.ajax({
                     type: "POST",
