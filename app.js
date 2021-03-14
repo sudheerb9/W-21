@@ -85,7 +85,7 @@ process.nextTick(function() {
 })
 );
 
-app.get('/auth/google', passport.authenticate('google', {  scope : ['profile', 'email'] }));
+app.get('/auth/google', passport.authenticate('google', {accessType: 'offline', prompt : 'consent', scope : ['profile', 'email'] }));
 
 app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/profile', failureRedirect: '/'}),
   function(req, res) {
