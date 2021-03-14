@@ -18,7 +18,7 @@ const caconn = mysql.createPool({
 
 /* GET home page. */
 function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     return next();
   }
@@ -37,7 +37,7 @@ function ensureProfile(req,res,next){
 
 //start
 router.get('/', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -51,7 +51,7 @@ router.get('/', function(req, res, next){
 })
 
 router.get('/competitions', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -64,7 +64,7 @@ router.get('/competitions', function(req, res, next){
 })
 
 router.get('/analogcircuitdesign', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -77,7 +77,7 @@ router.get('/analogcircuitdesign', function(req, res, next){
 })
 
 router.get('/colloquiacs', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -90,7 +90,7 @@ router.get('/colloquiacs', function(req, res, next){
 })
 
 router.get('/colloquiace', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -103,7 +103,7 @@ router.get('/colloquiace', function(req, res, next){
 })
 
 router.get('/colloquiaee', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -116,7 +116,7 @@ router.get('/colloquiaee', function(req, res, next){
 })
 
 router.get('/colloquiame', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -129,7 +129,7 @@ router.get('/colloquiame', function(req, res, next){
 })
 
 router.get('/countercypher', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -142,7 +142,7 @@ router.get('/countercypher', function(req, res, next){
 })
 
 router.get('/csgo', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -155,7 +155,7 @@ router.get('/csgo', function(req, res, next){
 })
 
 router.get('/mathsolympiad', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -168,7 +168,7 @@ router.get('/mathsolympiad', function(req, res, next){
 })
 
 router.get('/ml', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -181,7 +181,7 @@ router.get('/ml', function(req, res, next){
 })
 
 router.get('/pioneersplan', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -194,7 +194,7 @@ router.get('/pioneersplan', function(req, res, next){
 })
 
 router.get('/schoolchamp', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -207,7 +207,7 @@ router.get('/schoolchamp', function(req, res, next){
 })
 
 router.get('/sciencetoons', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -220,7 +220,7 @@ router.get('/sciencetoons', function(req, res, next){
 })
 
 router.get('/sherlock', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -233,7 +233,7 @@ router.get('/sherlock', function(req, res, next){
 })
 
 router.get('/shutter', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -246,7 +246,7 @@ router.get('/shutter', function(req, res, next){
 })
 
 router.get('/valorant', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -259,7 +259,7 @@ router.get('/valorant', function(req, res, next){
 })
 
 router.get('/workshops', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -272,7 +272,7 @@ router.get('/workshops', function(req, res, next){
 })
 
 router.get('/aiml', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -285,7 +285,7 @@ router.get('/aiml', function(req, res, next){
 })
 
 router.get('/android', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -298,7 +298,7 @@ router.get('/android', function(req, res, next){
 })
 
 router.get('/automobiles', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -311,7 +311,7 @@ router.get('/automobiles', function(req, res, next){
 })
 
 router.get('/bridgedesign', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -324,7 +324,7 @@ router.get('/bridgedesign', function(req, res, next){
 })
 
 router.get('/cybersecurity', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -339,7 +339,7 @@ router.get('/cybersecurity', function(req, res, next){
 //done.
 
 router.get('/about', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -352,7 +352,7 @@ router.get('/about', function(req, res, next){
 })
 
 router.get('/guestlectures', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -365,7 +365,7 @@ router.get('/guestlectures', function(req, res, next){
 })
 
 router.get('/exhibits', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -378,7 +378,7 @@ router.get('/exhibits', function(req, res, next){
 })
 
 router.get('/initiatives', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -391,7 +391,7 @@ router.get('/initiatives', function(req, res, next){
 })
 
 router.get('/highlights', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -404,7 +404,7 @@ router.get('/highlights', function(req, res, next){
 })
 
 router.get('/team', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -417,7 +417,7 @@ router.get('/team', function(req, res, next){
 })
 
 router.get('/sponsors', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {
@@ -430,7 +430,7 @@ router.get('/sponsors', function(req, res, next){
 })
 
 router.get('/contact', function(req, res, next){
-  if (req.isAuthenticated()) { 
+  if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
     conn.query(qr, (err, rows) => {

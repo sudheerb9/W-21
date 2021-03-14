@@ -28,13 +28,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({ secret: 'keyboard cat', key: 'sid'}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
+
+app.use('/', indexRouter);
 
 //passport oauth 
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use('/', httpsRedirect(true), indexRouter);
 
 
 passport.serializeUser(function(user,done){
@@ -48,7 +51,7 @@ passport.deserializeUser(function(user, done) {
 passport.use (new GoogleStrategy({
   clientID: '96689537530-jkk11ojp0i4r1ffq7q6u8idamsm59c9j.apps.googleusercontent.com',
   clientSecret: 'NtXKC_Ba8lAWJGuysBU3ADXm',
-  callbackURL: "https://wissenaire.org/auth/google/callback",
+  callbackURL: "http://localhost:3000/auth/google/callback",
   userProfileURL  : 'https://www.googleapis.com/oauth2/v3/userinfo'
 },
 function(accessToken, refreshToken, profile, done) {
