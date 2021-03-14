@@ -4,15 +4,15 @@ var mysql = require('mysql');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_wissenaire21"
 });
 
 const caconn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_ca21"
 });
 
@@ -478,9 +478,11 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
 })
 
 router.post('/addreg', function(req,res,next) {
-  const addpart = ("INSERT INTO reg VALUES (email, name, ticketname, eventname, ticketprice, wissid, institute, city, state, orderid, timestamp) ?");
+  const addpart = ("INSERT INTO reg (email, name, ticketname, eventname, ticketprice, wissid, institute, city, state, orderid, timestamp) VALUES ?");
   var values = [];
-  if (Array.isArray(json[req.body])){
+  console.log(req.body)
+  var arr = req.body;
+  if (Array.isArray(arr)){
     console.log('json array');
     arr.forEach(element => { 
       console.log(element); 
@@ -493,15 +495,18 @@ router.post('/addreg', function(req,res,next) {
     }); 
   }
   else {
+    console.log('else')
     var element = req.body;
     var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
     values.push(regarray);
+    console.log(values)
     request.get("https://wissenaire.org/addcapoints?wissid='"+element.answerList[3].answer+"'")
         .on('response', function(response) {
           console.log(response.statusCode) ;
     });
   }
   conn.query(addpart, [values], (err,rows)=>{
+    console.log('query')
     if (err) throw err;
     console.log(rows);
     res.sendStatus(200);
@@ -510,25 +515,27 @@ router.post('/addreg', function(req,res,next) {
 
 router.get('/addcapoints', function(req,res,next){
   var wissid = req.query.wissid;
-  var caref;
+  var ref;
   const id = ("SELECT * FROM `users` WHERE wissid = '"+ wissid+"'");
   conn.query(id, (err, rows)=>{
     if(err) throw err;
-    caref = rows[0].caref;
-    if(caref){
-      const part = ("SELECT points from users WHERE wissid = '"+caref+"' ;");
-      caconn.query(part, (err,data) =>{
-        if(err) throw err;
-        if(data) {
-          console.log(data[0].points);
-          var points = data[0].points + 10;
-          const update = ("UPDATE `users` SET points = '"+points+"' WHERE wissid = '"+caref+"';");
-          caconn.query(update, (err,result)=>{
-            if (err) throw err;
-            console.log(result);
-          })
-        }
-      })
+    if(rows[0]){
+      ref = rows[0].caref;
+      if(ref){
+        const part = ("SELECT points from users WHERE wissid = '"+ref+"' ;");
+        caconn.query(part, (err,data) =>{
+          if(err) throw err;
+          if(data) {
+            console.log(data[0].points);
+            var points = data[0].points + 10;
+            const update = ("UPDATE `users` SET points = '"+points+"' WHERE wissid = '"+ref+"';");
+            caconn.query(update, (err,result)=>{
+              if (err) throw err;
+              console.log(result);
+            })
+          }
+        })
+      }
     }
     res.sendStatus(200);
   })
