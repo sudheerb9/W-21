@@ -89,12 +89,14 @@ app.get('/auth/google', passport.authenticate('google', {  scope : ['profile', '
 
 app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/profile', failureRedirect: '/'}),
   function(req, res) {
+    req.session.save(); 
     res.redirect('/profile')   
   }
 );
 
 app.get('/logout', (req, res) => {
   req.logout()
+  req.session.destroy();
   res.redirect('/')
 })
 
