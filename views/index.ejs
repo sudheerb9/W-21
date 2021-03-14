@@ -32,7 +32,7 @@
 		width: 65%;
 		height: auto;
 		position: relative;
-		top: -10%;
+		top: 0%;
 	}
 	@media screen and (max-width: 500px) {
 		.gifdiv{
@@ -46,13 +46,27 @@
 			position: relative;
 			top: 15%;
 		}
-			
+		/* #preloader{
+			position:absolute;
+			top: 0%;
+			height: auto;
+		}
+		#loader{
+			vertical-align: auto;
+		}	 */
 	}
+	/* .hidden{
+		display: none;
+	} */
+	
   </style>
 </head>
 
 <body>
-	<header style="height: 1vh !important;">
+	<!-- <div id="preloader" style="width: 100vw; height: 100vh; z-index: 10000; background: black;">
+		<img src="./images/preloader1.gif" id="loader" style="width: 100vw; background:black;">
+	</div> -->
+	<header style="height: 1vh !important;" class="hidden">
 		<div id="navigation" class="">
 			<a class="menu-toggle">
 				<div class="btn-toggle">
@@ -126,22 +140,30 @@
 	  </div>
 	</header>
 
+	<div id="body" class="hidden">
   <a href="/contact" class="d-none d-md-block" style="position:absolute; top:20%; right:20%; height:70px; animation: book 2s ease-in-out infinite; z-index:100;"><img title="Contact" width="70px" src="./images/contact1.png"  ></a>
   <a href="/competitions"  class="d-none d-md-block" style="position:absolute; top:60%; right:90%; height:70px; animation: book 2s ease-in-out infinite; z-index:100;"><img title="Competitions" width="70px" src="./images/competitions1.png" ></a>
   <a href="/initiatives"  class="d-none d-md-block" style="position:absolute; top:60%; right:2%; height:70px; animation: book 2s ease-in-out infinite; z-index:100;" ><img title="Initiatives" width="70px" src="./images/initiatives1.png"></a>
   <a href="/workshops" class="d-none d-md-block" style="position:absolute; top:20%; right:80%; height:70px; animation: book 2s ease-in-out infinite; z-index:100;"><img title="Workshops" width="70px" src="./images/workshops1.png" ></a>
-
+	</div>
    
   <div id="particles-background" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
   <div id="particles-foreground" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
   
-  <div id="gifimage" style="z-index:-10">
+  <div id="gifimage" class="hidden" style="z-index:-10">
 	<img class="justify-content-center align-self-center" id="gifimage" src="./images/FINAL.gif">
   </div>
    
   <script type="text/javascript" src="./javascripts/canvas.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
   <script src="./javascripts/jquery.min.js"></script>
-
+  <!-- <script>
+	  setTimeout(function(){
+		  $('header').removeClass('hidden');
+		  $('#body').removeClass('hidden');
+		  $("#gifimage").removeClass('hidden');
+		  $('#preloader').addClass('hidden');
+	  }, 5300);
+  </script> -->
 </body>
 </html>

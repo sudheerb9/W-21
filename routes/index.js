@@ -4,15 +4,15 @@ var mysql = require('mysql');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_wissenaire21"
 });
 
 const caconn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_ca21"
 });
 
