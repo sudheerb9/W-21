@@ -4,8 +4,8 @@ var mysql = require('mysql');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_wissenaire21"
 });
 
@@ -456,9 +456,10 @@ router.get('/profile',ensureAuthenticated, function(req, res, next) {
 });
 
 router.post('/profile', ensureAuthenticated, function(req,res,next){
-  const id = ("SELECT * FROM `users` WHERE email = '"+ req.body.email+"'");
+  const id = ("SELECT * FROM `users` WHERE email = '"+ req.user.emails[0].value+"'");
     conn.query(id, (err, rows)=>{
       if(err) throw err;
+      console.log('ok')
       var wissid;
       if (rows[0].id < 10) wissid = 'W21R1000' + rows[0].id;
       else if (rows[0].id < 100) wissid = 'W21R100' + rows[0].id;
