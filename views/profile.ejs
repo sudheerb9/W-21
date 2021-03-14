@@ -245,7 +245,7 @@
             </div>
         </div>
         <div class="large-6 col-12 col-md-6">
-            <form>
+            <form id="form">
                 <div class="form-group">
                     <label>Mobile Number (preferably whatsapp)</label>
                     <input type="number" class="form-control" name="phone" placeholder="Enter your phone number" required>
@@ -274,7 +274,7 @@
 
             </form>
             <script>
-              $("form").submit(function(e) {
+              $("#form").submit(function(e) {
                 e.preventDefault(); 
                 var form = $(this);
                 $.ajax({
