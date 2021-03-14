@@ -469,7 +469,7 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
       conn.query(qr, (err, rows)=>{
         if(err) throw err;
         console.log(rows);
-        request.get("https://fundraiser.wissenaire.org/mainmail.php?name='"+req.body.name+"'&phone='"+req.body.phone+"'&wissid='"+wissid+"'")
+        request.get("https://fundraiser.wissenaire.org/mainmail.php?name='"+req.user.displayName+"'&phone='"+req.body.phone+"'&wissid='"+wissid+"'")
         .on('response', function(response) {
           console.log(response.statusCode) ;
         });
