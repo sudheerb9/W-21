@@ -1,219 +1,189 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
-        <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
-        <link href="./stylesheets/canvas.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Workshops | Wissenaire'21</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      <link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="./stylesheets/navbar.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logo-mini.png" type="image/x-icon">
+    <link href="./stylesheets/workshop.css" rel="stylesheet">
 
-          <link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
-        <link href="./stylesheets/navbar.css" rel="stylesheet">
-        <link rel="shortcut icon" href="./images/logo-mini.png" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="./stylesheets/workshop.css">
-        
-        <title>Workshops | Wissenaire'21</title>
-        <style>
-            @media screen and (min-width: 425px){
-                #open{
-                    margin-top:120px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header style="height: 1vh !important;">
-            <div id="navigation" class="">
-                <a class="menu-toggle">
-                    <div class="btn-toggle">
-                        <div>
-                            <div class="before"></div>
-                            <div class="after"></div>
-                        </div>
-                    </div>
-                </a>
-                <nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
-                            
-                  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
-                  <ul>
-                      <% if(participant.name) { %>
-                    <li class="open">
-                        <i class="icofont-ui-user"></i><br><br><a href="/profile">My Profile</a>
-                      </li>
-                      <% } else { %>
-                    <li class="open">
-                      <i class="icofont-sign-in"></i><br><br><a href="/auth/google">Sign In</a>
-                    </li>
-                      <% } %>
-                    <li>
-                      <i class="icofont-info-circle"></i><br><br><a href="/about">About</a>
-                    </li>
-                    <li>
-                      <i class="icofont-puzzle"></i><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
-                    </li>
-                    <li>
-                      <i class="icofont-learn"></i><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
-                    </li>
-                    <li>
-                      <i class="icofont-mic"></i><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
-                    </li>
-                    <li>
-                      <i class="icofont-robot"></i><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
-                    </li>
-                    
-                    <li>
-                      <i class="icofont-light-bulb"></i><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
-                    </li>
-                    <li>
-                      <i class="icofont-star-alt-1"></i><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
-                    </li>
-                    <li>
-                      <i class="icofont-live-support"></i><br><br><a href="ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
-                    </li>
-                    <li>
-                      <i class="icofont-speech-comments"></i><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
-                    </li>
-                    <li>
-                      <i class="icofont-money"></i><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
-                    </li>
-                    <li>
-                      <i class="icofont-send-mail"></i><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
-                    </li>
-        
-                  </ul>
-                </nav>
-                
-                <div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
-                    <a href="/" title="Home" rel="home" class="site-branding__logo"> 
-                <dpan class="sr-only">Wissenaire logo</dpan>
-              </a>
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<header style="height: 1vh !important;">
+  <div id="navigation" class="">
+    <a class="menu-toggle">
+      <div class="btn-toggle">
+        <div>
+          <div class="before"></div>
+          <div class="after"></div>
+        </div>
+      </div>
+    </a>
+    <nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+          
+      <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+      <ul>
+        <% if(participant.name) { %>
+      <li class="open">
+        <i class="icofont-ui-user"></i><br><br><a href="/profile">My Profile</a>
+        </li>
+        <% } else { %>
+      <li class="open">
+        <i class="icofont-sign-in"></i><br><br><a href="/auth/google">Sign In</a>
+      </li>
+        <% } %>
+      <li>
+        <i class="icofont-info-circle"></i><br><br><a href="/about">About</a>
+      </li>
+      <li>
+        <i class="icofont-puzzle"></i><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+      </li>
+      <li>
+        <i class="icofont-learn"></i><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+      </li>
+      <li>
+        <i class="icofont-mic"></i><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+      </li>
+      <li>
+        <i class="icofont-robot"></i><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+      </li>
+      
+      <li>
+        <i class="icofont-light-bulb"></i><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+      </li>
+      <li>
+        <i class="icofont-star-alt-1"></i><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+      </li>
+      <li>
+        <i class="icofont-live-support"></i><br><br><a href="ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+      </li>
+      <li>
+        <i class="icofont-speech-comments"></i><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+      </li>
+      <li>
+        <i class="icofont-money"></i><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+      </li>
+      <li>
+        <i class="icofont-send-mail"></i><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+      </li>
+
+      </ul>
+    </nav>
+    
+    <div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+      <a href="/" title="Home" rel="home" class="site-branding__logo"> 
+    <dpan class="sr-only">Wissenaire logo</dpan>
+    </a>
+  </div>
+  <div class="menu-slide-back">
+    <span class="icon icon-fonts icon-arrow-back">
+    <span class="sr-only">go back to previous menu</span>
+    </span>
+  </div>
+  </div>
+</header>
+
+
+<div class="wrapper" style="margin-top: 10%;">
+    <div class="row">
+            <div class="box"><div class="imgholder" style="background-image: url('./images/aiml.jpg');"> </div>
+                <div class="description " >
+                <bold>     <h2>AI & ML</h2></bold>
+           <bold>  <p style="color: white">Machine learning provides systems the ability to automatically learn and improve from experience
+            without being explicitly programmed. </p></bold>
+                    <ul class="list">
+                       <button  onclick="location.href = 'https://wissenaire.org/aiml';" class="knowmore">KNOW MORE</button>
+                    </ul>
+                </div>
             </div>
-            <div class="menu-slide-back">
-              <span class="icon icon-fonts icon-arrow-back">
-                <span class="sr-only">go back to previous menu</span>
-              </span>
+            <div class="box" >
+                <div class="imgholder" style="background-image: url('./images/android.jpg');filter: blur(2.5px);
+  -webkit-filter: blur(2.5px);"> </div>
+                <div class="description">
+                    <bold> <h2>Android Development</h2></bold>
+                  <bold>  <p style="color: white">            Android development is the process by which applications are created for devices running
+                    the Android operating system.
+                  </p></bold>
+                    <ul class="list">
+                        <!--<li><a href="https://twitter.com/sudo_Jayasree" target="_blank"  rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://github.com/Jayasree77"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/jayasree0708/"><i class="fab fa-linkedin-in"></i></a></li>-->
+                        <button  onclick="location.href = 'https://wissenaire.org/android';" class="knowmore">KNOW MORE</button>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </header>
-
-
-        <div id="particles-background" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
-        <div id="particles-foreground" class="vertical-centered-box"><canvas class="pg-canvas"  height="303" style="display: block;"></canvas></div>
-  
-        
-        <div class="container" id="open"> 
-            <div class="slider">
-
-                <div class="box1 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>AI & ML</h1>
-<p> Artificial Intelligence refers to the machine intelligence. Machine learning is an application of artificial
-    intelligence (AI) that provides systems the ability to automatically learn and improve from experience
-    without being explicitly programmed. Machine learning focuses on the development of computer
-    programs that can access data and use it learn for themselves. This workshop equips you with the
-    necessary skills required for the understanding of Artificial Intelligence & Machine Learning.</p>
-
-                        <button onclick="window.location.href='/aiml'">KNOW MORE</button>
-                    </div>
-
-                    <div class="illustration"><div class="inner" style="background-image:url('../public/images/aiml.jpg'); background: cover;"></div></div>
+            <div class="box" >
+                 <div class="imgholder" style="background-image: url('./images/cybersecurity.jpg');filter: blur(2px);
+  -webkit-filter: blur(2px);"> </div>
+                <div class="description">
+                 <bold>    <h2 style="color: black">Cyber Security & Ethical Hacking</h2></bold>
+                <bold> <strong><p style="color: black">Cyber test and evaluation continue to be on the forefront of the acquisition community.</p></strong></bold>
+                    <ul class="list">
+                       <button  onclick="location.href = 'https://wissenaire.org/cybersecurity';" class="knowmore">KNOW MORE</button>
+                    </ul>
                 </div>
-                                
-                
-                <div class="box2 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>Automobile & IC Engines</h1>
-                        <p>
-                            Automobile and Electric Vehicles Workshop mainly
-focuses from Basics to Advanced concepts in Automobile Engineering. It covers chassis design, working of
-Suspension unit, Steering System, Braking unit, Transmission, Fuel Supply System, IC Engine and Advanced
-Technologies like ABS, EBD, DTS-Fi, MPFI, VVTI. All the concepts are explained in detail with the Help of
-Theory and With Specially Designed Animations which would help students to visualize Things before
-practically working on it.
-                        </p>
-                        <button onclick="window.location.href='/automobiles'">KNOW MORE</button>
-                    </div>
+            </div>
+        </div>
+        <div class="row">
 
-                    <div class="illustration"><div class="inner" style="background-image:url('../public/images/automobiles.jpeg');background: cover;"></div></div>
+             <div class="box" >
+                <div class="imgholder" style="background-image: url('./images/automobiles.jpeg');filter: blur(2px);
+  -webkit-filter: blur(2px);"> </div>
+                <div class="description">
+                  <bold>   <h2 style="color: white">Automobile & IC Engines</h2></bold>
+               <bold>  <p style="color: white">Automobile Electric Vehicles Workshop
+                focuses from Basics to Advanced concepts in Automobile Engineering. </p></bold>
+                    <ul class="list">
+                       <button  onclick="location.href = 'https://wissenaire.org/automobiles';" class="knowmore">KNOW MORE</button>
+                    </ul>
                 </div>
-                                
-                <div class="box3 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>Android App Development</h1>
-                        <p>
-                            Android software development is the process by which applications are created for devices running
-the Android operating system. Google states that "Android apps can be written using Kotlin, Java,
-and C++ languages" using the Android software development kit (SDK), while using other languages is also
-possible. All non-JVM languages, such as Go, JavaScript, C, C++ or assembly, need the help of JVM
-language code, that may be supplied by tools, likely with restricted API support. Some programming
-languages and tools allow cross-platform app support (i.e. for both Android and iOS).
-                        </p>
-                        <button onclick="window.location.href='/android'">KNOW MORE</button>
-                    </div>
-
-                    <div class="illustration"><div class="inner" style="background-image:url('../public/images/android.jpg');background: cover;"></div></div>
-                </div>
-                                
-                <div class="box4 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>Bridge Design</h1>
-                        <p>
-                            Bridge design is one of the oldest subjects in civil engineering. This course deals with bridge substructure
-systems, highlighting the more technical aspects of the design and rehabilitation of the bridge
-substructure. Focusing on the components comprising and affecting bridge substructures, this course
-addresses the different types of each component and discusses specific selection or design criteria, with a
-focus on traditional and innovative practical solutions in professional applications. The main objective is to
-present practical and economic methods of evaluation, inspection, reinforcement and rehabilitation of
-bridges.
-                        </p>
-                        <button onclick="window.location.href='/bridgedesign'">KNOW MORE</button>
-                    </div>
-
-                    <div class="illustration"><div class="inner" style="background-image:url('../public/images/bridgedesign.jpg');background: cover;"></div></div>
-                </div>
-                                
-                <div class="box5 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>Cyber Security& Ethical Hacking</h1>
-                        <p>
-                            Cyber test and evaluation continue to be on the forefront of the acquisition community. Increasing
-incidents of cyber-attacks and data protection efforts globally are expected to create $35 billion revenue
-opportunity and employment opportunities for about a million professionals by 2025 for India.
-                        </p>
-                        <button onclick="window.location.href='/cybersecurity'">KNOW MORE</button>
-                    </div>
-
-                    <div class="illustration"><div class="inner" style="background-image:url('../public/images/cybersecurity.jpg');background: cover;"></div></div>
-                </div>
-                                
             </div>
 
-          <svg xmlns="http://www.w3.org/2000/svg" class="prev" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(0 91) rotate(-90)" fill="#fff"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="next" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(56.898) rotate(90)" fill="#fff"/></svg> 
-            <div class="trail">
-                    <div class="box1 active">1</div>
-                    <div class="box2">2</div>
-                    <div class="box3">3</div>
-                    <div class="box4">4</div>
-                    <div class="box5">5</div>
+              <div class="box" >
+                <div class="description"><div class="imgholder" style="background-image: url('./images/bridgedesign.jpg');filter: blur(1.5px);
+  -webkit-filter: blur(1.5px);"> </div>
+                  <bold>   <h2 style="color: white">Bridge Design</h2></bold>
+                    <bold> <p style="color: white">This course deals with bridge
+                      systems, highlighting the more technical aspects of the design. </p></bold>
+                    <ul class="list">
+                        <button  onclick="location.href = 'https://wissenaire.org/bridgedesign';" class="knowmore">KNOW MORE</button>
+                    </ul>
+                </div>
             </div>
-        </div>   
-       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/CSSRulePlugin.min.js"></script>
-        <script  type="text/javascript" src="./javascripts/workshop.js"></script>
-        <script type="text/javascript" src="./javascripts/canvas.js"></script>  
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-        <script src="./javascripts/jquery.min.js"></script>
-        <script></script>
-    </body>
+            
+        </div>
+        </div>
+ <script src="https://kit.fontawesome.com/bad7f7f5d4.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="./javascripts/jquery.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".box"), {
+		max: 25,
+        speed: 400,
+        easing:"cubic-bezier(.03,.98,.52,.99)",
+        perspective:500,
+        transition:true
+    });
+  </script>
+
+</body>
 </html>

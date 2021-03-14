@@ -299,3 +299,13 @@
     margin-top: 15vw;
   }
 }
+
+@media screen and (max-width: 425px){
+  .container{
+    margin-top: 20%  !important;
+  }
+  html{
+    width: 100vw !important;
+    overflow-x:hidden !important;
+  }
+}
