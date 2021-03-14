@@ -26,12 +26,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({ secret: 'keyboard cat', key: 'sid'}));
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(__dirname + '/public'));
+
 
 app.use('/',httpsRedirect(true), indexRouter);
 
@@ -85,7 +86,7 @@ process.nextTick(function() {
 })
 );
 
-app.get('/auth/google', passport.authenticate('google', {accessType: 'offline', prompt : 'consent', scope : ['profile', 'email'] }));
+app.get('/auth/google', passport.authenticate('google', { prompt : 'consent', scope : ['profile', 'email'] }));
 
 app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/profile', failureRedirect: '/'}),
   function(req, res) {
