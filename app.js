@@ -12,8 +12,8 @@ var httpsRedirect = require('express-https-redirect');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_wissenaire21"
 });
 
@@ -56,7 +56,7 @@ passport.deserializeUser(async function(user, done) {
 passport.use (new GoogleStrategy({
   clientID: '96689537530-jkk11ojp0i4r1ffq7q6u8idamsm59c9j.apps.googleusercontent.com',
   clientSecret: 'NtXKC_Ba8lAWJGuysBU3ADXm',
-  callbackURL: "https://wissenaire.org/auth/google/callback",
+  callbackURL: "http://localhost:3000/auth/google/callback",
   userProfileURL  : 'https://www.googleapis.com/oauth2/v3/userinfo'
 },
 function(accessToken, refreshToken, profile, done) {
