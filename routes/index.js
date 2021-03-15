@@ -1,18 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var request = require('request');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "root",
-  password: "",
+  user: "wissenaire_sudheer",
+  password: "sudheer@wissenaire",
   database: "wissenaire_wissenaire21"
 });
 
 const caconn = mysql.createPool({
   host: "localhost",
-  user: "root",
-  password: "",
+  user: "wissenaire_sudheer",
+  password: "sudheer@wissenaire",
   database: "wissenaire_ca21"
 });
 
@@ -469,6 +470,11 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
     conn.query(qr, (err, res)=>{
       if(err) throw err;
       console.log(res);
+      request.get("https://fundraiser.wissenaire.org/mainmail.php?name="+rows[0].name+"&phone="+req.body.phone+"&wissid="+wissid+"&email="+req.body.email+"")
+        .on('response', function(response) {
+          console.log(response.statusCode) ;
+          
+      })
     })
     res.send('success');
   })

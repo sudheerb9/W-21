@@ -12,8 +12,8 @@ var httpsRedirect = require('express-https-redirect');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "root",
-  password: "",
+  user: "wissenaire_sudheer",
+  password: "sudheer@wissenaire",
   database: "wissenaire_wissenaire21"
 });
 
@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use('/',httpsRedirect(true), indexRouter);
+app.use('/', indexRouter);
 
 //passport oauth 
 app.use(passport.initialize());
@@ -56,7 +56,7 @@ passport.deserializeUser(async function(user, done) {
 passport.use (new GoogleStrategy({
   clientID: '96689537530-jkk11ojp0i4r1ffq7q6u8idamsm59c9j.apps.googleusercontent.com',
   clientSecret: 'NtXKC_Ba8lAWJGuysBU3ADXm',
-  callbackURL: "http://localhost:3000/auth/google/callback",
+  callbackURL: "https://wissenaire.org/auth/google/callback",
   userProfileURL  : 'https://www.googleapis.com/oauth2/v3/userinfo'
 },
 function(accessToken, refreshToken, profile, done) {
@@ -101,7 +101,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { successRedire
 
 app.get('/logout', (req, res) => {
   req.logout()
-  req.session.destroy();
+  // req.session.destroy();
   res.redirect('/')
 })
 
