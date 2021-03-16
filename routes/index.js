@@ -502,9 +502,10 @@ router.post('/addreg', function(req,res,next) {
   else {
     console.log('else')
     var element = JSON.stringify(req.body.data);
+    console.log(elemebt)
     var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
     values.push(regarray);
-    console.log(values)
+    console.log(regarray)
     request.get("https://wissenaire.org/addcapoints?wissid='"+element.answerList[3].answer+"'")
         .on('response', function(response) {
           console.log(response.statusCode) ;
