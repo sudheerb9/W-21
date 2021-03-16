@@ -12,8 +12,8 @@ var httpsRedirect = require('express-https-redirect');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_wissenaire21"
 });
 

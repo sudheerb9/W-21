@@ -5,15 +5,15 @@ var request = require('request');
 
 const conn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_wissenaire21"
 });
 
 const caconn = mysql.createPool({
   host: "localhost",
-  user: "wissenaire_sudheer",
-  password: "sudheer@wissenaire",
+  user: "root",
+  password: "",
   database: "wissenaire_ca21"
 });
 
@@ -481,7 +481,9 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
 })
 
 router.post('/addreg', function(req,res,next) {
+  console.log(req.body)
   const addpart = ("INSERT INTO reg (email, name, ticketname, eventname, ticketprice, wissid, institute, city, state, orderid, timestamp) VALUES ?");
+  console.log('ok')
   var values = [];
   console.log(req.body)
   var arr = req.body;
