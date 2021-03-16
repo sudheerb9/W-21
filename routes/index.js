@@ -486,7 +486,7 @@ router.post('/addreg', function(req,res,next) {
   console.log('ok')
   var values = [];
   console.log(req.body)
-  var arr = JSON.stringify(req.body.data);
+  var arr = JSON.parse(req.body.data);
   if (Array.isArray(arr)){
     console.log('json array');
     arr.forEach(element => { 
