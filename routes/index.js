@@ -502,7 +502,7 @@ router.post('/addreg', function(req,res,next) {
   else {
     console.log('else')
     var element = JSON.stringify(req.body.data);
-    console.log(elemebt)
+    console.log(element)
     var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
     values.push(regarray);
     console.log(regarray)
