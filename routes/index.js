@@ -482,7 +482,7 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
 
 router.post('/addreg', function(req,res,next) {
   // console.log(req.body)
-  const addpart = ("INSERT INTO reg (email, name, ticketname, eventname, ticketprice, wissid, institute, city, state, orderid, timestamp) VALUES ?");
+  const addpart = ("INSERT INTO reg (email, name, ticketname, eventname, ticketprice, wissid, year, institute, state, phone, orderid, timestamp) VALUES ?");
   console.log('ok')
   var values = [];
   console.log(req.body)
@@ -491,7 +491,7 @@ router.post('/addreg', function(req,res,next) {
     console.log('json array');
     arr.forEach(element => { 
       console.log(element); 
-      var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
+      var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[4].answer, element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
       values.push(regarray);
       request.get("https://wissenaire.org/addcapoints?wissid='"+element.answerList[3].answer+"'")
         .on('response', function(response) {
@@ -503,7 +503,7 @@ router.post('/addreg', function(req,res,next) {
     console.log('else')
     var element = JSON.parse(req.body.data);
     console.log(element)
-    var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
+    var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice, element.answerList[4].answer,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
     console.log(regarray);
     values.push(regarray);
     request.get("https://wissenaire.org/addcapoints?wissid='"+element.answerList[3].answer+"'")
