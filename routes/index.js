@@ -481,12 +481,12 @@ router.post('/profile', ensureAuthenticated, function(req,res,next){
 })
 
 router.post('/addreg', function(req,res,next) {
-  console.log(req.body)
+  // console.log(req.body)
   const addpart = ("INSERT INTO reg (email, name, ticketname, eventname, ticketprice, wissid, institute, city, state, orderid, timestamp) VALUES ?");
   console.log('ok')
   var values = [];
   console.log(req.body)
-  var arr = req.body;
+  var arr = JSON.stringify(req.body.data);
   if (Array.isArray(arr)){
     console.log('json array');
     arr.forEach(element => { 
@@ -501,7 +501,7 @@ router.post('/addreg', function(req,res,next) {
   }
   else {
     console.log('else')
-    var element = req.body;
+    var element = JSON.stringify(req.body.data);
     var regarray = [element.userEmailId, element.userName, element.ticketName, element.eventName, element.ticketPrice,  element.answerList[3].answer, element.answerList[0].answer, element.answerList[1].answer,  element.answerList[2].answer, element.uniqueOrderId, element.registrationTimestamp];
     values.push(regarray);
     console.log(values)
