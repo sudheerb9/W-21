@@ -64,6 +64,32 @@ router.get('/competitions', function(req, res, next){
   else res.render('competitions', {participant: false})
 })
 
+router.get('/arduinohackathon', function(req, res, next){
+  if (req.user) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('ah', {participant : rows[0]});
+    })
+  }
+  else res.render('ah', {participant: false})
+})
+
+router.get('/cad', function(req, res, next){
+  if (req.user) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('cad', {participant : rows[0]});
+    })
+  }
+  else res.render('cad', {participant: false})
+})
+
 router.get('/analogcircuitdesign', function(req, res, next){
   if (req.user) { 
     console.log('loggedin')
