@@ -1,0 +1,274 @@
+<html>
+<head>
+	<title>Wissenaire’21</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
+	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  	<link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="./stylesheets/canvas.css" rel="stylesheet">
+	<link href="./stylesheets/navbar.css" rel="stylesheet">
+	<link rel="icon" type="image/png"  href="./images/logo-mini.png" type="image/x-icon">
+  <style>
+    body{
+		width: 100vw;
+		background-color: rgb(0, 0, 0);
+    }
+	a:hover{
+		text-decoration: none !important;
+	}
+	.gifdiv{
+		width: 100vw;
+	}
+	#gifimage{
+		display: block;
+		margin: auto; 
+		width: 65%;
+		height: auto;
+		position: relative;
+		top: 0%;
+	}
+	@media screen and (max-width: 500px) {
+		.gifdiv{
+			width: 100vw;
+		}
+		#gifimage{
+			display: block;
+			margin: auto; 
+			width: 100%;
+			height: auto;
+			position: relative;
+			top: 15%;
+		}
+		/* #preloader{
+			position:absolute;
+			top: 0%;
+			height: auto;
+		}
+		#loader{
+			vertical-align: auto;
+		}	 */
+	}      
+       
+        html {
+          overflow-y:   scroll;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent; /* make scrollbar transparent */
+        }
+        
+        .contact{
+            color:#fff;
+            margin-bottom:50px;
+        }  
+        
+
+        span {
+          color:#000;
+          display: inline-block;
+          vertical-align: middle;
+          line-height: normal;
+        }
+        
+        tr{
+            color:#fff;
+        }
+        .tex a{
+          text-decoration: none;
+         }
+        
+        
+        .about-me .content h3 {
+        font-weight: 700;
+        font-size: 26px;
+        color: #ff7e00;
+        }
+
+        .about-me .content ul {
+        list-style: none;
+        padding: 0;
+        }
+
+        .about-me .content ul li {
+        padding-bottom: 10px;
+        }
+
+        .about-me .content ul i {
+        font-size: 20px;
+        padding-right: 2px;
+        color: #ff7e00;
+        }
+
+        .about-me .content p:last-child {
+        margin-bottom: 0;
+        }
+
+        .section-title h2 {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0;
+        line-height: 1px;
+        margin: 0 0 20px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #aaaaaa;
+        font-family: "Poppins", sans-serif;
+        }
+
+        .section-title h2::after {
+        content: "";
+        width: 120px;
+        height: 1px;
+        display: inline-block;
+        background:#ff7e00;
+        margin: 4px 10px;
+        }
+
+        .section-title p {
+        margin: 0;
+        margin: -15px 0 15px 0;
+        font-size: 36px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        }
+
+
+  </style>
+</head>
+
+<body>
+	<!-- <div id="preloader" style="width: 100vw; height: 100vh; z-index: 10000; background: black;">
+		<img src="./images/preloader1.gif" id="loader" style="width: 100vw; background:black;">
+	</div> -->
+	<header style="height: 1vh !important;" class="hidden">
+		<div id="navigation" class="">
+			<a class="menu-toggle">
+				<div class="btn-toggle">
+					<div>
+						<div class="before"></div>
+						<div class="after"></div>
+					</div>
+				</div>
+			</a>
+			<nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+						
+			  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+			  <ul>
+				  <% if(participant) { %>
+				<li class="open">
+					<i class="icofont-ui-user"></i><br><br><a href="/profile">My Profile</a>
+				  </li>
+				  <% } else { %>
+				<li class="open">
+				  <i class="icofont-sign-in"></i><br><br><a href="/auth/google">Sign In</a>
+				</li>
+				  <% } %>
+				<li>
+				  <i class="icofont-info-circle"></i><br><br><a href="/about">About</a>
+				</li>
+				<li>
+				  <i class="icofont-puzzle"></i><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+				</li>
+				<li>
+				  <i class="icofont-learn"></i><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+				</li>
+				<li>
+				  <i class="icofont-mic"></i><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+				</li>
+				<li>
+				  <i class="icofont-robot"></i><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+				</li>
+				
+				<li>
+				  <i class="icofont-light-bulb"></i><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+				</li>
+				<li>
+				  <i class="icofont-star-alt-1"></i><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+				</li>
+				<li>
+				  <i class="icofont-live-support"></i><br><br><a href="ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+				</li>
+				<li>
+				  <i class="icofont-speech-comments"></i><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+				</li>
+				<li>
+				  <i class="icofont-money"></i><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+				</li>
+				<li>
+				  <i class="icofont-send-mail"></i><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+				</li>
+	
+			  </ul>
+			</nav>
+			
+			<div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+				<a href="/" title="Home" rel="home" class="site-branding__logo"> 
+			<dpan class="sr-only">Wissenaire logo</dpan>
+		  </a>
+		</div>
+		<div class="menu-slide-back">
+		  <span class="icon icon-fonts icon-arrow-back">
+			<span class="sr-only">go back to previous menu</span>
+		  </span>
+		</div>
+	  </div>
+	</header>
+
+
+    <section id="about" class="about" style="margin-top: 40px;">
+
+        <div class="about-me container">
+    
+          <div class="section-title">
+            <h2 style="color: #08e4fc;">About us</h2>
+         <!--   <p>More about us</p> -->
+          </div>
+    
+          <div class="row">
+            <div class="col-lg-7 d-none d-lg-block" data-aos="fade-right">
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/Ag2CBFT6Hjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="d-block d-lg-none justify-contents-center" style="display: block; margin: auto;">
+              <iframe width="auto" height="250" src="https://www.youtube.com/embed/Ag2CBFT6Hjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-5 pt-4 pt-lg-0 content" data-aos="fade-left">
+            
+              <p  style="color: white;">
+                <br>
+                Wissenaire, the annual techno-management fest of IIT Bhubaneswar is one of the biggest of its kind in East India. Encompassing various sectors of technology, science and management this three-day extravaganza is maneuvers it's participants through the world of futuristic technologies. Every year Wissenaire comes up with a theme and in 2021 Wissenaire has got some unique ideas in store for you with the theme 
+              </p>
+    
+              <p class="font-italic" style="color: #08e4fc;">
+                 Transhumanism : Enhancing contemporary technology engendering an era of engineered humans
+              </p>
+    
+            </div>
+              
+            <div class="col-12 content" data-aos="fade-left">   
+              <p style="color:white;">
+                <br><br>
+                Every evolution that the human race went through made it more intelligent. Intelligence is what has allowed the human race to not only survive but also thrive despite many biological shortcomings. This intelligence has facilitated the development of technologies at an accelerating rate. Now, the emphasis is not only on how the technology impacts the world around us but also on how it helps mankind transcend its natural limitations. The present trajectory of technological development necessarily aims at a future incomprehensible to beings where it floats the idea of replacing human biology with technology. All these paved the way for the philosophical movement of Transhumanism. Its time to take our creativity and sophistication to the next level. We are now transcending into an era of superhuman where technology meets human science. Thus, Wissenaire’21 decide to promote this with the theme “Transhumanism: Enhancing contemporary technology engendering a new era of Engineered humans”
+              </p>
+            </div>
+        
+          </div>
+        
+        </div>
+    
+      </section>
+   
+  <script type="text/javascript" src="./javascripts/canvas.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="./javascripts/jquery.min.js"></script>
+
+</body>
+</html>

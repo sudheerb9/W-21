@@ -372,10 +372,10 @@ router.get('/about', function(req, res, next){
     conn.query(qr, (err, rows) => {
       if(err) throw err;
       console.log(rows[0])
-      res.render('comingsoon', {participant : rows[0]});
+      res.render('about', {participant : rows[0]});
     })
   }
-  else res.render('comingsoon', {participant: false})
+  else res.render('about', {participant: false})
 })
 
 router.get('/guestlectures', function(req, res, next){
