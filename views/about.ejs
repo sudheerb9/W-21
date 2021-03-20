@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
-	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
@@ -13,134 +13,97 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   	<link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
     <link href="./stylesheets/canvas.css" rel="stylesheet">
-	<link href="./stylesheets/navbar.css" rel="stylesheet">
+    <link href="./stylesheets/navbar.css" rel="stylesheet">
 	<link rel="icon" type="image/png"  href="./images/logo-mini.png" type="image/x-icon">
   <style>
     body{
 		width: 100vw;
+        height: auto;
 		background-color: rgb(0, 0, 0);
     }
 	a:hover{
 		text-decoration: none !important;
 	}
-	.gifdiv{
-		width: 100vw;
-	}
-	#gifimage{
-		display: block;
-		margin: auto; 
-		width: 65%;
-		height: auto;
-		position: relative;
-		top: 0%;
-	}
-	@media screen and (max-width: 500px) {
-		.gifdiv{
-			width: 100vw;
-		}
-		#gifimage{
-			display: block;
-			margin: auto; 
-			width: 100%;
-			height: auto;
-			position: relative;
-			top: 15%;
-		}
-		/* #preloader{
-			position:absolute;
-			top: 0%;
-			height: auto;
-		}
-		#loader{
-			vertical-align: auto;
-		}	 */
-	}      
-       
-        html {
-          overflow-y:   scroll;
-        }
-        ::-webkit-scrollbar {
-            width: 0px;
-            background: transparent; /* make scrollbar transparent */
-        }
-        
-        .contact{
-            color:#fff;
-            margin-bottom:50px;
-        }  
-        
+    
+    body {
+        overflow-y: scroll;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+    
+    .contact{
+        color:#fff;
+        margin-bottom:50px;
+    }  
+    
 
-        span {
-          color:#000;
-          display: inline-block;
-          vertical-align: middle;
-          line-height: normal;
-        }
-        
-        tr{
-            color:#fff;
-        }
-        .tex a{
-          text-decoration: none;
-         }
-        
-        
-        .about-me .content h3 {
-        font-weight: 700;
-        font-size: 26px;
-        color: #ff7e00;
-        }
-
-        .about-me .content ul {
-        list-style: none;
-        padding: 0;
-        }
-
-        .about-me .content ul li {
-        padding-bottom: 10px;
-        }
-
-        .about-me .content ul i {
-        font-size: 20px;
-        padding-right: 2px;
-        color: #ff7e00;
-        }
-
-        .about-me .content p:last-child {
-        margin-bottom: 0;
-        }
-
-        .section-title h2 {
-        font-size: 20px;
-        font-weight: 500;
-        padding: 0;
-        line-height: 1px;
-        margin: 0 0 20px 0;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #aaaaaa;
-        font-family: "Poppins", sans-serif;
-        }
-
-        .section-title h2::after {
-        content: "";
-        width: 120px;
-        height: 1px;
+    span {
+        color:#000;
         display: inline-block;
-        background:#ff7e00;
-        margin: 4px 10px;
-        }
+        vertical-align: middle;
+        line-height: normal;
+    }
+    
+    tr{
+        color:#fff;
+    }    
+    .about-me .content h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #ff7e00;
+    }
 
-        .section-title p {
-        margin: 0;
-        margin: -15px 0 15px 0;
-        font-size: 36px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-family: "Poppins", sans-serif;
-        color: #fff;
-        }
+    .about-me .content ul {
+    list-style: none;
+    padding: 0;
+    }
 
+    .about-me .content ul li {
+    padding-bottom: 10px;
+    }
+
+    .about-me .content ul i {
+    font-size: 20px;
+    padding-right: 2px;
+    color: #ff7e00;
+    }
+
+    .about-me .content p:last-child {
+    margin-bottom: 0;
+    }
+
+    .section-title h2 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    font-family: "Poppins", sans-serif;
+    }
+
+    .section-title h2::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background:gold;
+    margin: 4px 10px;
+    }
+
+    .section-title p {
+    margin: 0;
+    margin: -15px 0 15px 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    }
 
   </style>
 </head>
@@ -222,43 +185,42 @@
 		</div>
 	  </div>
 	</header>
-
-
-    <section id="about" class="about" style="margin-top: 40px;">
-
+  
+    <section id="about" class="about" style="margin-top: 100px; margin-bottom: 20px;">
         <div class="about-me container">
     
           <div class="section-title">
-            <h2 style="color: #08e4fc;">About us</h2>
-         <!--   <p>More about us</p> -->
+            <h2 style="color: #fff;">About us</h2>
           </div>
     
           <div class="row">
             <div class="col-lg-7 d-none d-lg-block" data-aos="fade-right">
-              <iframe width="500" height="315" src="https://www.youtube.com/embed/Ag2CBFT6Hjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="500" height="405" src="https://www.youtube.com/embed/Ag2CBFT6Hjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="d-block d-lg-none justify-contents-center" style="display: block; margin: auto;">
-              <iframe width="auto" height="250" src="https://www.youtube.com/embed/Ag2CBFT6Hjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style="width: 100%; height: auto;" src="https://www.youtube.com/embed/Ag2CBFT6Hjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-lg-5 pt-4 pt-lg-0 content" data-aos="fade-left">
             
               <p  style="color: white;">
                 <br>
-                Wissenaire, the annual techno-management fest of IIT Bhubaneswar is one of the biggest of its kind in East India. Encompassing various sectors of technology, science and management this three-day extravaganza is maneuvers it's participants through the world of futuristic technologies. Every year Wissenaire comes up with a theme and in 2021 Wissenaire has got some unique ideas in store for you with the theme 
-              </p>
+                Wissenaire, the annual techno-management fest of IIT Bhubaneswar is one of the biggest of its kind in East India. Encompassing various sectors of technology, science and management this three-day extravaganza is maneuvers it's participants through the world of futuristic technologies. Wissenaire's theme changes every year in order to keep with all the developments that take place year after year. Our theme for this year is
+              
     
               <p class="font-italic" style="color: #08e4fc;">
                  Transhumanism : Enhancing contemporary technology engendering an era of engineered humans
-              </p>
+              </p></p>
+
+              <p style="color: white;">Transhumanism is the belief that humanity should enhance our capabilities and overcome the fundamental limitations of our bodies by augmenting them with technology. Science fiction in pop culture such as Terminator, Robocop only touched the surface of what transhumanism could bring about .</p>
     
             </div>
               
-            <div class="col-12 content" data-aos="fade-left">   
+            <!-- <div class="col-12 content" data-aos="fade-left">   
               <p style="color:white;">
                 <br><br>
                 Every evolution that the human race went through made it more intelligent. Intelligence is what has allowed the human race to not only survive but also thrive despite many biological shortcomings. This intelligence has facilitated the development of technologies at an accelerating rate. Now, the emphasis is not only on how the technology impacts the world around us but also on how it helps mankind transcend its natural limitations. The present trajectory of technological development necessarily aims at a future incomprehensible to beings where it floats the idea of replacing human biology with technology. All these paved the way for the philosophical movement of Transhumanism. Its time to take our creativity and sophistication to the next level. We are now transcending into an era of superhuman where technology meets human science. Thus, Wissenaire’21 decide to promote this with the theme “Transhumanism: Enhancing contemporary technology engendering a new era of Engineered humans”
               </p>
-            </div>
+            </div> -->
         
           </div>
         
