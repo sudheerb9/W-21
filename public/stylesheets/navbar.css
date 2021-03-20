@@ -421,7 +421,7 @@ a {
   text-align: center;
   box-sizing: border-box;
 }
-.page-navigation-menu >ul >li >i{
+.page-navigation-menu >ul >li> a >i{
   color:black;
   font-size:4rem;
   margin-bottom: 8px;
@@ -531,7 +531,7 @@ transform: translateY(-5px) ;
 }
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 500px){
   .btn-toggle {
     width: 32px;
     height: 12px;

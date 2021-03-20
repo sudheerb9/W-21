@@ -463,10 +463,22 @@ router.get('/contact', function(req, res, next){
     conn.query(qr, (err, rows) => {
       if(err) throw err;
       console.log(rows[0])
-      res.render('comingsoon', {participant : rows[0]});
+      res.render('contact', {participant : rows[0]});
     })
   }
-  else res.render('comingsoon', {participant: false})
+  else res.render('contact', {participant: false})
+})
+
+router.post('/contact', function(req,res,next) {
+  var name = req.body.name;
+  var email = req.body.email;
+  var message = req.body.message;
+  const qr = ("INSERT into `contact` (name, email, message) VALUES('" + name + "', '" + email + "','" + message + "');");
+  conn.query(qr, (err, result) => {
+    if(err) throw err;
+    console.log(result);
+    res.sendStatus(200);
+  })
 })
 
 router.get('/profile',ensureAuthenticated, function(req, res, next) {

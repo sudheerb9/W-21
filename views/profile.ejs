@@ -118,79 +118,79 @@
     </style>
 </head>
 <body>
-  <header style="height: 1vh !important;" >
-    <div id="navigation" class="">
-      <a class="menu-toggle">
-        <div class="btn-toggle">
-          <div>
-            <div class="before"></div>
-            <div class="after"></div>
-          </div>
-        </div>
-      </a>
-      <nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
-            
-        <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
-        <ul>
-          <% if(participant.name) { %>
-        <li class="open">
-          <i class="icofont-ui-user"></i><br><br><a href="/profile">My Profile</a>
-          </li>
-          <% } else { %>
-        <li class="open">
-          <i class="icofont-sign-in"></i><br><br><a href="/auth/google">Sign In</a>
-        </li>
-          <% } %>
-        <li>
-          <i class="icofont-info-circle"></i><br><br><a href="/about">About</a>
-        </li>
-        <li>
-          <i class="icofont-puzzle"></i><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
-        </li>
-        <li>
-          <i class="icofont-learn"></i><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
-        </li>
-        <li>
-          <i class="icofont-mic"></i><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
-        </li>
-        <li>
-          <i class="icofont-robot"></i><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
-        </li>
-        
-        <li>
-          <i class="icofont-light-bulb"></i><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
-        </li>
-        <li>
-          <i class="icofont-star-alt-1"></i><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
-        </li>
-        <li>
-          <i class="icofont-live-support"></i><br><br><a href="ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
-        </li>
-        <li>
-          <i class="icofont-speech-comments"></i><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
-        </li>
-        <li>
-          <i class="icofont-money"></i><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
-        </li>
-        <li>
-          <i class="icofont-send-mail"></i><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
-        </li>
-  
-        </ul>
-      </nav>
-      
-      <div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
-        <a href="/" title="Home" rel="home" class="site-branding__logo"> 
-      <dpan class="sr-only">Wissenaire logo</dpan>
-      </a>
-    </div>
-    <div class="menu-slide-back">
-      <span class="icon icon-fonts icon-arrow-back">
-      <span class="sr-only">go back to previous menu</span>
-      </span>
-    </div>
-    </div>
-  </header>
+  <header style="height: 1vh !important;" class="hidden">
+		<div id="navigation" class="">
+			<a class="menu-toggle">
+				<div class="btn-toggle">
+					<div>
+						<div class="before"></div>
+						<div class="after"></div>
+					</div>
+				</div>
+			</a>
+			<nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+						
+			  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+			  <ul>
+				  <% if(participant) { %>
+				<li class="open">
+					<a href="/profile"><i class="icofont-ui-user"></i></a><br><br><a href="/profile">My Profile</a>
+				  </li>
+				  <% } else { %>
+				<li class="open">
+                    <a href="/auth/google"><i class="icofont-sign-in"></i></a><br><br><a href="/auth/google">Sign In</a>
+				</li>
+				  <% } %>
+				<li>
+                    <a href="/about"><i class="icofont-info-circle"></i></a><br><br><a href="/about">About</a>
+				</li>
+				<li>
+                    <a href="/competitions"><i class="icofont-puzzle"></i></a><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+				</li>
+				<li>
+                    <a href="/workshops"><i class="icofont-learn"></i></a><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+				</li>
+				<li>
+                    <a href="/guestlectures"><i class="icofont-mic"></i></a><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+				</li>
+				<li>
+                    <a href="/exhibits"><i class="icofont-robot"></i></a><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+				</li>
+				
+				<li>
+                    <a href="/initiatives"><i class="icofont-light-bulb"></i></a><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+				</li>
+				<li>
+                    <a href="/highlights"><i class="icofont-star-alt-1"></i></a><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+				</li>
+				<li>
+                    <a href="https://ca.wissenaire.org" ><i class="icofont-live-support"></i></a><br><br><a href="https://ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+				</li>
+				<li>
+                    <a href="/team"><i class="icofont-speech-comments"></i></a><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+				</li>
+				<li>
+                    <a href="/sponsors"><i class="icofont-money"></i></a><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+				</li>
+				<li>
+                    <a href="/contact"><i class="icofont-send-mail"></i></a><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+				</li>
+	
+			  </ul>
+			</nav>
+			
+			<div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+				<a href="/" title="Home" rel="home" class="site-branding__logo"> 
+			<dpan class="sr-only">Wissenaire logo</dpan>
+		  </a>
+		</div>
+		<div class="menu-slide-back">
+		  <span class="icon icon-fonts icon-arrow-back">
+			<span class="sr-only">go back to previous menu</span>
+		  </span>
+		</div>
+	  </div>
+	</header>
     <div class="section-title row" data-num="01" data-aos="fade-up"  style="margin-top: 100px;">
         <h3 class="h6">User Profile</h3>
     </div>
