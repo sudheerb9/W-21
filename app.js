@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use('/',httpsRedirect(true), indexRouter);
+app.use('/', indexRouter);
 
 //passport oauth 
 app.use(passport.initialize());

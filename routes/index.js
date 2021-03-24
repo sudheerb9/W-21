@@ -194,7 +194,7 @@ router.get('/mathsolympiad', function(req, res, next){
   else res.render('mo', {participant: false})
 })
 
-router.get('/ml', function(req, res, next){
+router.get('/artelligence', function(req, res, next){
   if (req.user) { 
     console.log('loggedin')
     const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
@@ -205,6 +205,20 @@ router.get('/ml', function(req, res, next){
     })
   }
   else res.render('ml', {participant: false})
+})
+
+
+router.get('/invstr', function(req, res, next){
+  if (req.user) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('invstr', {participant : rows[0]});
+    })
+  }
+  else res.render('invstr', {participant: false})
 })
 
 router.get('/pioneersplan', function(req, res, next){
