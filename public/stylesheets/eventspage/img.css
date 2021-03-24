@@ -107,6 +107,20 @@
   
 }
 
+.invstrdot {
+  
+  background-image: url('imgs/invstr.jpg');
+   border-radius: 50%;
+   display: inline-block;
+   z-index: 100;
+   position: absolute;
+    height: 26vw;
+   width: 26vw;
+   top: 6%;
+   left:6%;
+   
+ }
+
 @media only screen and (max-device-width: 500px ){
 
   .yantrixdot {
@@ -181,7 +195,16 @@
   top: 5%;
   left:9%;
 }
-
+.invstrdot  {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
 .onndot   {
   height: 49vw;
   width: 49vw;
@@ -229,7 +252,14 @@
   top: 6%;
   left:6%;
 }
-
+.invstrdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
 .exsdot {
  
   position: absolute;
