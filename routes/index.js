@@ -451,10 +451,10 @@ router.get('/team', function(req, res, next){
     conn.query(qr, (err, rows) => {
       if(err) throw err;
       console.log(rows[0])
-      res.render('comingsoon', {participant : rows[0]});
+      res.render('team', {participant : rows[0]});
     })
   }
-  else res.render('comingsoon', {participant: false})
+  else res.render('team', {participant: false})
 })
 
 router.get('/sponsors', function(req, res, next){
