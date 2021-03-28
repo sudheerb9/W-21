@@ -585,7 +585,7 @@ router.get('/addcapoints', function(req,res,next){
           if(err) throw err;
           if(data) {
             console.log(data[0].points);
-            var points = data[0].points + 10;
+            var points = data[0].points + 30;
             const update = ("UPDATE `users` SET points = '"+points+"' WHERE wissid = '"+ref+"';");
             caconn.query(update, (err,result)=>{
               if (err) throw err;
