@@ -91,14 +91,14 @@
   .services .icon-box:hover h4 a, .services .icon-box:hover p {
     color: #fff;
   }
-  .page-navigation-menu >ul >li >i{
+  .page-navigation-menu >ul >li >a >i{
     color:black;
     font-size:8rem !important;
     margin-bottom: 8px;
   }
 
   @media screen and (max-width: 500px){
-    .page-navigation-menu >ul >li >i{
+    .page-navigation-menu >ul >li >a >i{
       font-size:3em !important;
       margin-bottom: 8px;
     }
@@ -132,7 +132,7 @@
 						
 			  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
 			  <ul>
-				  <% if(participant) { %>
+				  <% if(participant.wissid) { %>
 				<li class="open">
 					<a href="/profile"><i class="icofont-ui-user"></i></a><br><br><a href="/profile">My Profile</a>
 				  </li>

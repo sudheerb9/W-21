@@ -1,0 +1,266 @@
+<html>
+<head>
+	<title>Guest Lectures | Wissenaire’21</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  	<link href="./stylesheets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="./stylesheets/events.css" rel="stylesheet">
+    <link href="./stylesheets/navbar.css" rel="stylesheet">
+	<link rel="icon" type="image/png"  href="./images/logo-mini.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body{
+            background-color: black;
+        }
+        .header {
+text-transform: uppercase;
+font-weight: 100;
+line-height: 2;
+letter-spacing: 2px;
+display: grid;
+grid-template-columns: 1fr auto 1fr;
+align-items: center;
+grid-gap: 20px;
+}
+.header:before,
+.header:after {
+background: #fff;
+display: block;
+height: 2px;
+width: 100%;
+content: '';
+}
+
+
+
+        h2{
+            color: #08E4FC;
+        }
+        p{
+            color: aliceblue;
+        }
+        .register{
+            align-content: center;
+            text-align: center;
+        }
+        .rightcontent{
+            text-align: right;
+                       
+        }
+        h2 {
+            margin-right: 1vw;
+            margin-left: 1vw;  
+        }
+        img{
+            border: 5px solid  #FFD700;
+            border-radius: 20px;
+        }
+        @media screen and (max-width : 400px) {
+            .rightcontent,.text{
+                text-align: center;
+            }
+            .header{
+                font-weight: 50;
+            }
+
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        AOS.init();
+      </script> 
+	<!-- <div id="preloader" style="width: 100vw; height: 100vh; z-index: 10000; background: black;">
+		<img src="./images/preloader1.gif" id="loader" style="width: 100vw; background:black;">
+	</div> -->
+   <header style="height: 1vh !important;" class="hidden">
+		<div id="navigation" class="">
+			<a class="menu-toggle">
+				<div class="btn-toggle">
+					<div>
+						<div class="before"></div>
+						<div class="after"></div>
+					</div>
+				</div>
+			</a>
+			<nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+						
+			  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+			  <ul>
+				  <% if(participant) { %>
+				<li class="open">
+					<a href="/profile"><i class="icofont-ui-user"></i></a><br><br><a href="/profile">My Profile</a>
+				  </li>
+				  <% } else { %>
+				<li class="open">
+                    <a href="/auth/google"><i class="icofont-sign-in"></i></a><br><br><a href="/auth/google">Sign In</a>
+				</li>
+				  <% } %>
+				<li>
+                    <a href="/about"><i class="icofont-info-circle"></i></a><br><br><a href="/about">About</a>
+				</li>
+				<li>
+                    <a href="/competitions"><i class="icofont-puzzle"></i></a><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+				</li>
+				<li>
+                    <a href="/workshops"><i class="icofont-learn"></i></a><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+				</li>
+				<li>
+                    <a href="/guestlectures"><i class="icofont-mic"></i></a><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+				</li>
+				<li>
+                    <a href="/exhibits"><i class="icofont-robot"></i></a><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+				</li>
+				
+				<li>
+                    <a href="/initiatives"><i class="icofont-light-bulb"></i></a><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+				</li>
+				<li>
+                    <a href="/highlights"><i class="icofont-star-alt-1"></i></a><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+				</li>
+				<li>
+                    <a href="https://ca.wissenaire.org" ><i class="icofont-live-support"></i></a><br><br><a href="https://ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+				</li>
+				<li>
+                    <a href="/team"><i class="icofont-speech-comments"></i></a><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+				</li>
+				<li>
+                    <a href="/sponsors"><i class="icofont-money"></i></a><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+				</li>
+				<li>
+                    <a href="/contact"><i class="icofont-send-mail"></i></a><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+				</li>
+	
+			  </ul>
+			</nav>
+			
+			<div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+				<a href="/" title="Home" rel="home" class="site-branding__logo"> 
+			<dpan class="sr-only">Wissenaire logo</dpan>
+		  </a>
+		</div>
+		<div class="menu-slide-back">
+		  <span class="icon icon-fonts icon-arrow-back">
+			<span class="sr-only">go back to previous menu</span>
+		  </span>
+		</div>
+	  </div>
+	</header> 
+    
+    <div class="container" style="margin-top: 150px;">
+           
+        <h2 class="header" style="color: brown;"> CHIEF GUEST</h2>
+       
+   
+    <br  /><br  /><br  />
+    <div class="row">
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center"
+        
+            data-aos="zoom-in-right" data-aos-easing="#example-easing"
+            data-aos-duration="1000"
+
+        ><img src="./images/aatre.JPG" height="400" alt="V K Aatre"></div>
+        
+        <div class="col-lg-6 col-sm-12  ">
+            <div class="row">
+                
+                <div class="col-lg-6 col-sm-12"
+                    data-aos="zoom-in-down" data-aos-easing="#example-easing"
+                    data-aos-duration="1500"
+
+                >
+                <h2 class="rightcontent"> V K Aatre </h2> </div>
+                <!-- <button data-aos="zoom-in" data-aos-easing="#example-easing" data-aos-duration="1500"
+                class="contact100-form-btn" style="width: auto; margin: auto;" onclick="popup('analog-circuit-design-132014');">
+                    Register for Free
+                    <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+                </button> -->
+
+            </div>
+            <br>
+
+            <div class="col-lg-12 col-sm-12 d-flex justify-content-right"
+            
+            data-aos="fade-left"
+            data-aos-easing="#example-easing"
+            data-aos-duration="1500"
+            
+            ><p class="rightcontent">
+                “There are no limits to what you can accomplish when you know who you are and have faith in what you can do”. This very fact is symbolised by Dr.Vasudev Kalkunte Aatre, an Indian scientist and former head of the Defence Research and Development Organisation (DRDO) and a recipient of Padma Bhushan in the year 2000. He was also bestowed with Padma Vibhushan award in the year 2016. Wissenaire’21 kickstarts this edition with the honor of having Dr.V.K.Aatre as the Chief Guest for the inaugural evening.  
+
+            </p>
+            </div>
+
+        </div>
+    </div>
+    <br /> <br /><br /><br /><br />
+    <div class="container">
+           
+        <h2 class="header" style="color: brown;"> TEKNITE </h2>
+       
+   
+    <br  /><br  /><br  />
+
+    <div class="row">
+        
+        <div class="col-lg-6 col-sm-12  ">
+            <div class="row">
+                <div class="col-lg col-sm-12"
+                data-aos="zoom-in-down" data-aos-easing="#example-easing"
+                data-aos-duration="1500"
+                
+                ><h2 class="text"> Michael Radice </h2> </div>
+                <button data-aos="zoom-in" data-aos-easing="#example-easing" data-aos-duration="1500"
+                class="contact100-form-btn" style="width: auto; margin: auto;" onclick="popup('guest-talks-141420');">
+                    Register for Free
+                    <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+                </button>
+                <script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js" type="text/javascript"></script>
+            </div>
+            <br>
+            <div class="col-lg-12 col-sm-12 d-flex justify-content-right"
+            
+            data-aos="fade-right"
+            data-aos-easing="#example-easing"
+            data-aos-duration="1500"
+            
+            
+            ><p class="text">Michael Radice has served in Executive and Board level leadership positions in technology services organizations
+for more than 45 years. Mr.Radice currently leads technology adoption and development for the ChartaCloud
+Group a New Hampshire, USA based company. ChartaCloud is a provider of robots and robot behavior
+software under the ROBOTTECA.com and ChartaCloudrobotics.com brands. ChartaCloud holds
+multiple technology distribution relationships with companies from around the world.
+Mr.Radice has been on the executive leadership teams of two successful stock IPOs one listed on NASDAQ
+(1983 – Computer Language Research Inc (CLR Inc.)) and the other on the NYSE (1999- INFONET).
+            </p>
+            </div>
+
+        </div>
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center    "
+            data-aos="zoom-in-left" data-aos-easing="#example-easing"
+            data-aos-duration="1000"
+        
+        ><img src="./images/Radice Bio Photo.png" height="400" alt="V K Aatre"></div>
+    </div>
+    </div>
+
+
+    
+  <!-- <script type="text/javascript" src="./javascripts/canvas.js"></script>   -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="./javascripts/jquery.min.js"></script>
+
+</body>
+</html>

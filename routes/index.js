@@ -36,6 +36,11 @@ function ensureProfile(req,res,next){
   })
 }
 
+function ensureTesttaker (req,res,next){
+  if(req.session.testtaker) next();
+  res.redirect('/acd/login');
+}
+
 //start
 router.get('/', function(req, res, next){
   if (req.user) { 
@@ -399,10 +404,10 @@ router.get('/guestlectures', function(req, res, next){
     conn.query(qr, (err, rows) => {
       if(err) throw err;
       console.log(rows[0])
-      res.render('comingsoon', {participant : rows[0]});
+      res.render('guestlectures', {participant : rows[0]});
     })
   }
-  else res.render('comingsoon', {participant: false})
+  else res.render('guestlectures', {participant: false})
 })
 
 router.get('/exhibits', function(req, res, next){
@@ -597,6 +602,40 @@ router.get('/addcapoints', function(req,res,next){
     }
     res.sendStatus(200);
   })
+})
+
+
+//tests
+router.get('/acd/login', function(req,res,next){
+  res.render('acdlogin');
+})
+
+router.post('/acd/login', function(req,res,next){
+  var username = req.body.username;
+  var password = req.body.password;
+  const checkauth = ("SELECT * from `reg` WHERE eventname = 'Analog Circuit Design' AND wissid = '"+username+"';");
+  conn.query(checkauth, (err,rows)=>{
+    if (err) throw err;
+    console.log(rows[0]);
+    if(rows[0].phone == password){
+      req.session.testtakerid = rows[0].wissid;
+      const checklog = ("SELECT * from `acd` WHERE wissid = '"+username+"';");
+      conn.query(checklog,(err, rows)=>{
+        if(err) throw err;
+        if(rows[0]) res.send('Already Logged in');
+        else res.send('You are all set');
+      })
+    }
+    else res.send('Invalid Credentials');
+  })
+})
+
+router.get('/acd/rules', function(req,res,next){
+  res.render('acdrules');
+})
+
+router.get('/acd/test', function(req,res,next){
+  res.render('acdtest');
 })
 
 module.exports = router;

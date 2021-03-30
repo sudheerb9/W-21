@@ -1,0 +1,179 @@
+<html>
+<head>
+	<title>Analog Circuit Design | Wissenaire’21</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">	
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  	<link href="../stylesheets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../stylesheets/navbar.css" rel="stylesheet">
+	<link href="../stylesheets/profile.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="icon" type="image/png"  href="../images/logo-mini.png" type="image/x-icon">
+  <style>
+	  .page-navigation-menu >ul >li >a >i{
+    color:black;
+    font-size:8rem !important;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: 500px){
+    .page-navigation-menu >ul >li >a >i{
+      font-size:3em !important;
+      margin-bottom: 8px;
+    }
+    .large-6{
+      -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+
+  </style>
+</head>
+
+<body>
+	<!-- <div id="preloader" style="width: 100vw; height: 100vh; z-index: 10000; background: black;">
+		<img src="./images/preloader1.gif" id="loader" style="width: 100vw; background:black;">
+	</div> -->
+	<header style="height: 1vh !important;" class="hidden">
+		<div id="navigation" class="">
+			<a class="menu-toggle">
+				<div class="btn-toggle">
+					<div>
+						<div class="before"></div>
+						<div class="after"></div>
+					</div>
+				</div>
+			</a>
+			<nav role="navigation" aria-labelledby="block-butterfly-main-menu-menu" id="block-butterfly-main-menu" class="page-navigation-menu block block-menu navigation menu--main">
+						
+			  <h2 class="visually-hidden" id="block-butterfly-main-menu-menu">Main navigation</h2>
+			  <ul>
+				<li class="open">
+					<a href="../auth/google"><i class="icofont-ui-user"></i></a><br><br><a href="/auth/google">My Profile</a>
+				</li>
+				<li>
+                    <a href="../about"><i class="icofont-info-circle"></i></a><br><br><a href="/about">About</a>
+				</li>
+				<li>
+                    <a href="../competitions"><i class="icofont-puzzle"></i></a><br><br><a href="/competitions" data-drupal-link-system-path="node/4">Competitions</a>
+				</li>
+				<li>
+                    <a href="../workshops"><i class="icofont-learn"></i></a><br><br><a href="/workshops" data-drupal-link-system-path="case-studies">Workshops</a>
+				</li>
+				<li>
+                    <a href="../guestlectures"><i class="icofont-mic"></i></a><br><br><a href="/guestlectures" data-drupal-link-system-path="blog">Guest Lectures</a>
+				</li>
+				<li>
+                    <a href="../exhibits"><i class="icofont-robot"></i></a><br><br><a href="/exhibits" data-drupal-link-system-path="contact/contact_us">Exhibits</a>
+				</li>
+				
+				<li>
+                    <a href="../initiatives"><i class="icofont-light-bulb"></i></a><br><br><a href="/initiatives" data-drupal-link-system-path="contact/contact_us">Initiatives</a>
+				</li>
+				<li>
+                    <a href="../highlights"><i class="icofont-star-alt-1"></i></a><br><br><a href="/highlights" data-drupal-link-system-path="contact/contact_us">Highlights</a>
+				</li>
+				<li>
+                    <a href="https://ca.wissenaire.org" ><i class="icofont-live-support"></i></a><br><br><a href="https://ca.wissenaire.org" data-drupal-link-system-path="contact/contact_us">Campus Ambassador</a>
+				</li>
+				<li>
+                    <a href="../team"><i class="icofont-speech-comments"></i></a><br><br><a href="/team" data-drupal-link-system-path="contact/contact_us">Team</a>
+				</li>
+				<li>
+                    <a href="../sponsors"><i class="icofont-money"></i></a><br><br><a href="/sponsors" data-drupal-link-system-path="contact/contact_us">Sponsors'20</a>
+				</li>
+				<li>
+                    <a href="../contact"><i class="icofont-send-mail"></i></a><br><br><a href="/contact" data-drupal-link-system-path="contact/contact_us">Reach us</a>
+				</li>
+	
+			  </ul>
+			</nav>
+			
+			<div id="block-butterfly-branding" class="site-branding block block-system block-system-branding-block">
+				<a href="../" title="Home" rel="home" class="site-branding__logo"> 
+			<dpan class="sr-only">Wissenaire logo</dpan>
+		  </a>
+		</div>
+		<div class="menu-slide-back">
+		  <span class="icon icon-fonts icon-arrow-back">
+			<span class="sr-only">go back to previous menu</span>
+		  </span>
+		</div>
+	  </div>
+	</header>
+
+    <section class="container" style="display: block; margin: auto; margin-top: 100px;">
+        <h3 align="center" style="color: white;">Analog Circuit Design</h3>
+		<form style="width: 100%;">
+			<div class="form-group column large-8" style="margin:auto;">
+				<label>Wissenaire ID </label>
+				<input type="text" class="form-control" name="username" placeholder="Use the id used while registration" required>
+			</div>
+			<div class="form-group column large-8"  style="margin:auto;">
+				<label>Mobile Number</label>
+				<input type="password" class="form-control" name="password" placeholder="Use the mobile number used while registration" required>
+			</div>
+
+			
+			<button type="submit" style="display:block; margin:auto;" id="submit" class="btn btn-dark">Proceed to Exam </button>
+		  </form>
+		  <script>
+			$("form").submit(function(e) {
+			  e.preventDefault(); 
+			  var form = $(this);
+			  $.ajax({
+				  type: "POST",
+				  url: '/acd/login',
+				  data: form.serialize(), 
+				  success: function(result)
+				  {
+					  if(result === 'Invalid Credentials'){
+						  new swal({
+							  title: 'Invalid Credentials',
+							  text: result,
+							  icon: 'error'
+						  });
+					  }
+					  else if (result == 'You are all set'){
+						  new swal({
+							  title: 'All the Best !',
+							  text: result,
+							  icon: 'success'
+						  }).then((value)=>{
+							 window.location.href = '/acd/rules';
+						  })
+					  }
+					  else if(result == 'Already Logged in'){
+						new swal({
+							  title: 'Already Logged in',
+							  text: result,
+							  icon: 'error'
+						  });
+					  }
+				  }
+				  });
+			  });
+		</script>
+    </section>
+
+
+  <!-- <script type="text/javascript" src="./javascripts/canvas.js"></script>   -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="../javascripts/jquery.min.js"></script>
+
+</body>
+</html>
