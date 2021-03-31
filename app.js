@@ -9,6 +9,7 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var mysql = require('mysql');
 var httpsRedirect = require('express-https-redirect');
+const fileUpload = require('express-fileupload');
 
 const conn = mysql.createPool({
   host: "localhost",
@@ -28,7 +29,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(fileUpload());
 app.use(session({
   secret : "Our little Secret Here",
   resave : false,
@@ -38,7 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use('/', httpsRedirect(true), indexRouter);
+app.use('/',httpsRedirect(true),  indexRouter);
 
 //passport oauth 
 app.use(passport.initialize());

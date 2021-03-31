@@ -10,19 +10,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="../stylesheets/navbar.css" rel="stylesheet">
 	<link rel="icon" type="image/png"  href="../images/logo-mini.png" type="image/x-icon">
-  
+	<link rel="stylesheet" href="../stylesheets/exam.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <style>
+	  
+	  .nav {
+		 position: fixed;
+		 top:50%;
+	  }
+	  .nav-link{
+		  background: white;
+		  margin: 5px;
+		  margin-top: auto;
+	  }
+  </style>
 </head>
 
 <body>
 	<!-- <div id="preloader" style="width: 100vw; height: 100vh; z-index: 10000; background: black;">
 		<img src="./images/preloader1.gif" id="loader" style="width: 100vw; background:black;">
 	</div> -->
-	<header style="height: 1vh !important;" class="hidden">
+	<header style="height: 1vh !important; position: fixed;" class="hidden">
 		<div id="navigation" class="">
-			<a class="menu-toggle" style="color: white;">
+			<a class="menu-toggle d-none d-lg-block" style="color: white;">
 				<i class="icofont-ui-user"></i> &nbsp;BULUSU SRI DATTA SUDHEER
 			</a>
-			<a class="menu-toggle" style="color: white; width: 100%" align="center">
+			<a class="menu-toggle d-none d-lg-block" style="color: white; width: 100%" align="center">
 				<h3>ANALOG CIRCUIT DESIGN</h3>
 			</a>
 			
@@ -32,13 +47,145 @@
 				</a>
 			</div>
 
+			<script>
+				var now = new Date.now();;
+				var timeleft = '<%=t%>' + 10800000 - now;
+				var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+				document.getElementById("hours").innerHTML = hours + "h " 
+				document.getElementById("mins").innerHTML = minutes + "m " 
+				document.getElementById("secs").innerHTML = seconds + "s"
+
+				window.onload=function(){
+					var ten_minbef = setInterval(function() {
+						 new swal({
+							title: '10 Minutes Left',
+							icon: 'warning'
+						})
+					 }, timeleft-600000);
+
+					var auto_refresh = setInterval(function() { submitform(); }, timeleft);
+
+					function submitform(){
+						new swal({
+							title: 'Time is up!',
+							text: 'Thankyou for attending'
+						})					
+					}
+				}
+			</script>
+
+			<div>
+				TIMER: 
+				<p id="hours"></p>
+				<p id="mins"></p>
+				<p id="secs"></p>
+			</div>
+
 		</div>
 	</header>
 
-	<div class="container">
-		
-	</div>
+	<div class="container" style="color: white; margin-top: 150px; margin-bottom: 25px;">
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 1</h4><br>
+			Design a circuit in LT-spice with the following characteristics:<br>
+			&ensp;• It should have 3 ideal Op-Amps.<br>
+			&ensp;• It should be given a single input source (Vin).<br>
+			&ensp;• It should have 3 outputs namely V1 V2 and V3, one at each
+			Op-Amp.<br>
+			&ensp;• V1(jw)/Vin(jw) should be a high-pass response.<br>
+			&ensp;• V2(jw)/Vin(jw) should be a band pass response.<br>
+			&ensp;• V3(jw)/Vin(jw) should be a low-pass response.<br><br>
+			Specifications: <br>
+			&ensp;• You should use only Resistors and capacitors and you are free
+			to choose any value of R and C.<br><br>
+			&ensp;<img src="../images/test1.png" height="300"> &nbsp; Take VCC=+15V and VEE=+15V while doing simulation in Lt-spice as
+			shown above.
+			<br><br>
+			a) Attach the screenshot of the LT-spice schematic diagram of the
+			constructed circuit? (<b>5 points</b>) <br><br>
+			b) Attach the screenshots of all the high pass, low pass and band pass
+			responses by performing a DC sweep simulation? (<b>15 points</b>)<br><br>
+			c)The above-mentioned circuit is one of the filter circuits? Name it?
+			(<b>1Point</b>)? <br><br>
+			d)Write the formula of second order low pass, high pass and band
+			pass responses? (<b>3Points</b>)<br><br>
+			e) Why are the 3dB cut-off frequencies of low-pass response and
+			high-pass response that you obtain from simulation are same?
+			(<b>1Point</b>) <br><br>
+			<b><u>Hint</u></b>: <i>Out of three Op-Amp circuits that you cascade together, two
+			are integrator circuits.</i> <br>
+			<br>
+			<form id="q1" enctype="multipart/form-data">
+				<input id="sub" type="file"  name="file">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<input type="hidden" name="question" value="1">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q1").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
 
+					$.ajax({
+						type: "POST",
+						url: '/acd/submission',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: result,
+									icon: 'error'
+								});
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/<%=id%>-1.pdf">Check Uploaded pdf</a>
+
+		</div>
+	</div>
 
 
   <!-- <script type="text/javascript" src="./javascripts/canvas.js"></script>   -->

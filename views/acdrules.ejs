@@ -163,7 +163,28 @@
 			<script>
 				$("form").submit(function(e) {
 				  e.preventDefault(); 
-					window.location.href= '/acd/test';
+				  console.log('start exam');
+				  new swal({
+					  title : 'Time Starts Now !',
+					  text: 'All the Best'
+				  })
+					.then((values)=>{
+						var t = Date.now();
+						$.ajax({
+							type: "POST",
+							url: '/acd/notetime',
+							data: {
+								time: t,
+								wissid: '<%=id%>'
+							}, 
+							success: function(result)
+							{
+								if(result == 'success'){
+									window.location.href= '/acd/test';
+								}								
+							}
+						});
+					})				  
 				});
 			</script>
 		</div>

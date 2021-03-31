@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var request = require('request');
+var fileUpload = require('express-fileupload');
+var fs = require('fs')
+var path = require('path');
 
 const conn = mysql.createPool({
   host: "localhost",
@@ -630,12 +633,51 @@ router.post('/acd/login', function(req,res,next){
   })
 })
 
-router.get('/acd/rules', function(req,res,next){
-  res.render('acdrules');
+router.get('/acd/rules', ensureTesttaker, function(req,res,next){
+  res.render('acdrules', {id: req.session.testtakerid});
 })
 
-router.get('/acd/test', function(req,res,next){
-  res.render('acdtest');
+router.post('/acd/notetime', function(req,res,next){
+  const wissid = req.body.wissid;
+  const time = req.body.time;
+  const insertquery = ("INSERT INTO `acd` (wissid, time) VALUES ('"+wissid+"', '"+time+"');");
+  conn.query(insertquery, (err,rows)=>{
+    if (err) throw err; 
+    res.send ('success');
+  })
+})
+
+router.get('/acd/test', ensureTesttaker, function(req,res,next){
+  const quer = ("SELECT * FROM `acd` WHERE wissid = '"+req.session.testtakerid+"';");
+  conn.query(quer, (err,rows)=>{
+    var time = rows[0].timestamp;
+    res.render('acdtest', {starttime: time, id: req.session.testtakerid});
+  })
+  
+})
+
+router.post('/acd/submission', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  const qno = req.body.question; 
+  var name = wissid + '-' + qno ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.file;
+  __dirname = path.dirname(__dirname) ;
+  uploadPath = path.normalize( __dirname + '/public/uploads/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send('err');
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
 })
 
 module.exports = router;
