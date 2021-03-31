@@ -57,43 +57,40 @@
 			</div>
 
 			<script>
-				
+				var  hours, minutes, seconds;
 				var myfunc = setInterval(function() {
 					var now = new window.Date();
 					// 10800000
-					var timeleft = parseInt('<%=starttime%>') +  4000000 - now;
+					var timeleft = parseInt('<%=starttime%>') +  4100000 - now;
 					var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
 					var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-					var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+					minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
 					var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 					document.getElementById("hours").innerHTML = hours + "h " 
 					document.getElementById("mins").innerHTML = minutes + "m " 
 					document.getElementById("secs").innerHTML = seconds + "s"
 				}, 1000);
 
-				var now = new window.Date();
-				var timeleft = parseInt('<%=starttime%>') +  4000000 - now;
-				var ten_minbef = setInterval(function() {
+				if(minutes == 5 || minutes == 10 || minutes == 2){
 						new swal({
-						title: '10 Minutes Left',
+						title: '"'+minutes+'" Minutes Left',
 						icon: 'warning'
 					})
-					}, timeleft-600000);
+				}
 
-				var auto_refresh = setInterval(function() { submitform(); }, timeleft);
-
-				function submitform(){
+				if(hours == 0 && minutes == 0 && seconds ==0){
 					new swal({
 						title: 'Time is up!',
 						text: 'Thankyou for attending'
-					})					
+					})
+					document.getElementById("body").innerHTML = '';					
 				}
 			</script>
 
 		</div>
 	</header>
 
-	<div class="container" style="color: white; margin-top: 50px; margin-bottom: 25px;">
+	<div class="container" id="body" style="color: white; margin-top: 50px; margin-bottom: 25px;">
 		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
 			<h4>Question No. 1</h4><br>
 			Design a circuit in LT-spice with the following characteristics:<br>
