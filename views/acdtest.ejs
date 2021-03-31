@@ -61,7 +61,7 @@
 				var myfunc = setInterval(function() {
 					var now = new window.Date();
 					// 10800000
-					var timeleft = parseInt('<%=starttime%>') +  4100000 - now;
+					var timeleft = parseInt('<%=starttime%>') +  4200000 - now;
 					var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
 					var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 					minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
@@ -69,9 +69,7 @@
 					document.getElementById("hours").innerHTML = hours + "h " 
 					document.getElementById("mins").innerHTML = minutes + "m " 
 					document.getElementById("secs").innerHTML = seconds + "s"
-				}, 1000);
-
-				if(minutes == 5 || minutes == 10 || minutes == 2){
+					if(hours == 0 && minutes == 2 || minutes == 5 || minutes == 10){
 						new swal({
 						title: '"'+minutes+'" Minutes Left',
 						icon: 'warning'
@@ -85,6 +83,9 @@
 					})
 					document.getElementById("body").innerHTML = '';					
 				}
+				}, 1000);
+
+				
 			</script>
 
 		</div>
