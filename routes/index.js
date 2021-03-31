@@ -651,7 +651,7 @@ router.post('/acd/notetime', function(req,res,next){
 router.get('/acd/test', function(req,res,next){
   const quer = ("SELECT * FROM `acd` WHERE wissid = '"+req.session.testtakerid+"';");
   conn.query(quer, (err,rows)=>{
-    var time = rows[0].timestamp;
+    var time = rows[0].time;
     res.render('acdtest', {starttime: time, id: req.session.testtakerid});
   })
   
