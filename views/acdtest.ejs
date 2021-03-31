@@ -49,29 +49,31 @@
 
 			
 
-			<div style="color: white; margin-top: 120px;">
+			<div class="row" style="color: white; margin-top: 120px; display: block; margin:auto;">
 				TIMER: 
-				<p id="hours"></p>
-				<p id="mins"></p>
-				<p id="secs"></p>
+				<span id="hours"></span>
+				<span id="mins"></span>
+				<span id="secs"></span>
 			</div>
 
 			<script>
-				var now = new window.Date();
+				var myfunc = setInterval(function() {
+					var now = new window.Date();
 
-				var timeleft = parseInt('<%=starttime%>') + 10800000 - now;
-				var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-				var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-				var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-				var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-				console.log(timeleft);
-				console.log(days);
-				console.log(hours);
-				console.log(minutes);
-				console.log(seconds);
-				document.getElementById("hours").innerHTML = hours + "h " 
-				document.getElementById("mins").innerHTML = minutes + "m " 
-				document.getElementById("secs").innerHTML = seconds + "s"
+					var timeleft = parseInt('<%=starttime%>') + 10800000 - now;
+					var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+					var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+					var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+					console.log(timeleft);
+					console.log(days);
+					console.log(hours);
+					console.log(minutes);
+					console.log(seconds);
+					document.getElementById("hours").innerHTML = hours + "h " 
+					document.getElementById("mins").innerHTML = minutes + "m " 
+					document.getElementById("secs").innerHTML = seconds + "s"
+				}, 1000);
 
 				window.onload=function(){
 					var ten_minbef = setInterval(function() {
