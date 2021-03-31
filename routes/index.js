@@ -633,7 +633,7 @@ router.post('/acd/login', function(req,res,next){
   })
 })
 
-router.get('/acd/rules', ensureTesttaker, function(req,res,next){
+router.get('/acd/rules', function(req,res,next){
   res.render('acdrules', {id: req.session.testtakerid});
 })
 
@@ -647,7 +647,7 @@ router.post('/acd/notetime', function(req,res,next){
   })
 })
 
-router.get('/acd/test', ensureTesttaker, function(req,res,next){
+router.get('/acd/test', function(req,res,next){
   const quer = ("SELECT * FROM `acd` WHERE wissid = '"+req.session.testtakerid+"';");
   conn.query(quer, (err,rows)=>{
     var time = rows[0].timestamp;
