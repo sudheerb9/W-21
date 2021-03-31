@@ -40,7 +40,7 @@ function ensureProfile(req,res,next){
 }
 
 function ensureTesttaker (req,res,next){
-  if(req.session.testtaker) next();
+  if(req.session.testtakerid) next();
   res.redirect('/acd/login');
 }
 
