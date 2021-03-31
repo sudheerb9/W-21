@@ -57,11 +57,11 @@
 			</div>
 
 			<script>
-				var timeleft
+				
 				var myfunc = setInterval(function() {
 					var now = new window.Date();
 					// 10800000
-					timeleft = parseInt('<%=starttime%>') +  3400000 - now;
+					var timeleft = parseInt('<%=starttime%>') +  3700000 - now;
 					var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
 					var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 					var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
@@ -71,6 +71,7 @@
 					document.getElementById("secs").innerHTML = seconds + "s"
 				}, 1000);
 
+				var timeleft = parseInt('<%=starttime%>') +  3700000 - now;
 				var ten_minbef = setInterval(function() {
 						new swal({
 						title: '10 Minutes Left',
