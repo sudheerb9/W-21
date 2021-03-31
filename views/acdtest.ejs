@@ -69,7 +69,7 @@
 					document.getElementById("hours").innerHTML = hours + "h " 
 					document.getElementById("mins").innerHTML = minutes + "m " 
 					document.getElementById("secs").innerHTML = seconds + "s"
-					if(hours == 0 && minutes == 2 || minutes == 5 || minutes == 10){
+					if(hours == 0 && seconds == 0 && (minutes == 2 || minutes == 5 || minutes == 10)){
 						new swal({
 						title: '"'+minutes+'" Minutes Left',
 						icon: 'warning'
