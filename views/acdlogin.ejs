@@ -150,7 +150,7 @@
 							  title: 'Invalid Credentials',
 							  text: result,
 							  icon: 'error'
-						  });
+						  })
 					  }
 					  else if (result == 'You are all set'){
 						  new swal({
@@ -166,7 +166,14 @@
 							  title: 'Already Logged in',
 							  text: result,
 							  icon: 'error'
-						  });
+						  }).then((values)=>{
+								new swal({
+									title: 'Resume Test ?',
+									text: 'You are running out of time',
+								}).then((value)=>{
+									window.location.href = '/acd/rules';
+								})
+						  })
 					  }
 				  }
 				  });
