@@ -60,7 +60,7 @@
 				var  hours, minutes, seconds;
 				var myfunc = setInterval(function() {
 					var now = new window.Date(); 
-					var timeleft = parseInt('<%=starttime%>') +  1000000 - now;
+					var timeleft = parseInt('<%=starttime%>') +  7200000 - now;
 					var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
 					var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 					minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
@@ -188,6 +188,327 @@
 			<a class="btn btn-primary" type="button" href="../uploads/<%=id%>-1.pdf">Check Uploaded pdf</a>
 
 		</div>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 2</h4><br>
+			Using only One Op-Amp, devise a circuit to realize the following
+			function utilizing three voltage inputs (V1, V2 and V3)?<br>
+			<span align="center">V(out)=5V1-3V2-7V3</span>
+			<br><br>
+			Specifications: <br>
+			&ensp;• Use universal Op-Amp(ideal).<br>
+			&ensp;• Take saturation voltages as VCC=+15V and -VEE=-15V.<br>
+			&ensp;• Take feedback resistance (Rf)=21kΩ.<br>
+			&ensp;• Take all the V1, V2 and V3 inputs as sinusoidal sources with
+			frequency 100Hz and amplitudes 5V,3V,4V respectively.<br>
+
+			<br><br>
+			a) Attach the screenshot of the LT-spice schematic diagram of the
+			designed circuit? (<b>4 points</b>) <br><br>
+			b) What are the gains of an inverting amplifier and non-inverting
+			amplifier with source resistance R1 and feedback resistance Rf?
+			(<b>2points</b>) <br><br>
+			c)Attach the screenshot of plot containing V1, V2 and V3 by
+			performing a transient simulation? 
+			 (<b>3Points</b>)<br><br>
+			d) The circuit designed is one of the types of amplifiers? Name it? 
+			(<b>1Point</b>) <br><br>
+			e) Attach the screenshot of plot containing (5V1-3V2-7V3) and V(out)
+			in different pane by performing a transient simulation? (<b>10 points</b>) <br><br>
+			<br>
+			<br>
+			<form id="q2" enctype="multipart/form-data">
+				<input id="sub" type="file"  name="file">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<input type="hidden" name="question" value="2">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q2").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/acd/submission',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: result,
+									icon: 'error'
+								});
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/<%=id%>-2.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 3</h4><br>
+			Consider the NMOS circuit below: <br>
+			&ensp;<img src="../images/test3.png" height="300"> <br>
+			<br><br>
+			Take VDD=10V
+			R1=R2=10MΩ
+			RD=Rs=6kΩ
+			Vt(threshold)=1V
+			µn Cox (w/L) =1mA/V2<br><br>
+			Specifications: <br>
+			&ensp;• Use nmos4 instead of inbuilt MOSFET nmos<br>
+			&ensp;• Name the nmos4 MOSFET as N_1u<br>
+			&ensp;• N_1u details can be provided in Spice directive as shown<br>
+			<span align="center"><b>.MODEL N_1u NMOS LEVEL = 3 </b>
+									<b>+ KP = 1000E-6 VTO=1</b></span>
+			&ensp;• Length and width of N_1u may be left unspecified<br>
+			
+			Perform the simulation with given specifications and verify whether
+			theoretical results are matching with experimental results.
+			<br><br>
+			a) Solve the above circuit to find VG, VD, Vs and ID theoretically with
+			the knowledge of working of NMOS? Attach the photocopy of solved
+			problem? (<b>10 points</b>) <br><br>
+			b) Attach the screenshot of schematic consisting designed circuit?
+			(<b>5 points</b>) <br><br>
+			c)Attach the screenshot of voltages and currents obtained by
+			performing DC Op simulation? 
+			 (<b>5 Points</b>)<br><br>
+			d) Why the current through gate of MOSFET is zero? Explain briefly? 
+			(<b>2 Points</b>) <br><br>
+			e) Name the bias employed for the given circuit? (<b>1 point</b>) <br><br>
+			f) What is the significance of threshold voltage in MOSFET? (<b>2 points</b>) 
+			<br>
+			<br>
+			<form id="q3" enctype="multipart/form-data">
+				<input id="sub" type="file"  name="file">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<input type="hidden" name="question" value="3">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q3").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/acd/submission',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: result,
+									icon: 'error'
+								});
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/<%=id%>-3.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 4</h4><br>
+			Design a common-emitter amplifier shown below with the following characteristics: <br>
+			&ensp;<img src="../images/test4.png" height="300"> <br>
+			<br><br>
+			Specifications: <br>
+			&ensp;• Take VCC=24V<br>
+			&ensp;• AV(OC)= -100<br>
+			&ensp;• IC=4mA<br>
+			&ensp;• VCE=12V<br>
+			&ensp;• IC (sat)=8mA<br>
+			&ensp;• DC current gain(β)=100<br>
+			&ensp;• Take R2 ≤ (βRE)/10<br>
+
+			
+			Perform the simulation with these specifications given above.
+			<br>While doing the simulation with any model change the value of β to
+			100 from it’s original value by imposing the model data onto spicedirective. Consider VBE=0.7V as diode cut-in voltage for obtaining
+			resistance values.
+			<br><br>
+			a) How you obtain the values of R1 , R2, Rc and RE from the given
+			specifications? Attach the scanned copy of the theoretical solution
+			for this? (<b>10 points</b>) <br><br>
+			b)Attach the screenshot of the LT-spice schematic diagram of the
+			designed circuit?
+			(<b>5 points</b>) <br><br>
+			c)Attach the screenshot of voltages and currents obtained by
+			performing DC Op simulation?  
+			 (<b>5 Points</b>)<br><br>
+			d) How does capacitors behave in DC-operation? 
+			(<b>2 Points</b>) <br><br>
+			e) Comment on the specification given as R2 ≤ (βRE)/10? (<b>3 points</b>) <br><br>
+			f) How do you justify the statement “BJT is operating in active mode”
+			from the simulation results? (<b>2 points</b>) <br><br>
+			g) Draw the frequency response of a CE amplifier and explain why
+			does it look like that? (<b>3 points</b>)
+			<br>
+			<br>
+			<form id="q4" enctype="multipart/form-data">
+				<input id="sub" type="file"  name="file">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<input type="hidden" name="question" value="4">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q4").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/acd/submission',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: result,
+									icon: 'error'
+								});
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/<%=id%>-4.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+
+		<button class="btn btn-danger" type="button"  id="end">End test</button>
+		<script>
+			$("#end").click(function(e){
+				new swal ({
+					title: "Thank you for attending", 
+					icon: "success"
+				}).then( (values)=>{
+					window.location.href = 'https://wissenaire.org/'
+				})
+			})
+
+		</script>
+
 	</div>
 
 
