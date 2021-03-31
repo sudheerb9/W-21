@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var request = require('request');
+var session = require('cookie-session');
 var fileUpload = require('express-fileupload');
 var fs = require('fs')
 var path = require('path');
