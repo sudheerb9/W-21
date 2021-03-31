@@ -35,7 +35,11 @@ app.use(fileUpload());
 app.use(session({
   secret : "Our little Secret Here",
   resave : false,
-  saveUninitialized : false
+  saveUninitialized : false,
+  cookie: {
+    maxAge: 999999999,
+    path: '/'
+}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
