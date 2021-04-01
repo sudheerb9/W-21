@@ -19,7 +19,6 @@ const conn = mysql.createPool({
 });
 
 var indexRouter = require('./routes/index');
-var mailRouter = require('./routes/mail');
 
 var app = express();
 
