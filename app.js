@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(fileUpload());
 app.use(session({
   secret : "Our little Secret Here",
-  resave : false,
-  saveUninitialized : false,
+  resave : true,
+  saveUninitialized : true,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
