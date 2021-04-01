@@ -1,5 +1,5 @@
 var DOMAIN = 'wissenaire.org';
-var mailgun = require('mailgun-js')({ apiKey: "6989322582937f8744a827075fdd2f18-1553bd45-def4c808", domain: DOMAIN });
+var mailgun = require('mailgun-js')({ apiKey: "", domain: DOMAIN });
 var MailComposer = require('nodemailer/lib/mail-composer');
 
 var mailOptions = {
