@@ -687,7 +687,7 @@ router.post('/acd/submission', function(req,res,next){
   file.mv(uploadPath, function(err) {
     if (err){
       console.log(err)
-      return res.send('err');
+      return res.send(err);
     }
     console.log('yaay ')
     res.send('success');
