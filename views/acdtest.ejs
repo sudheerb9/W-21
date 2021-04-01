@@ -220,7 +220,7 @@
 			<br>
 			<br>
 			<form id="q2" enctype="multipart/form-data">
-				<input id="sub" type="file"  name="file">
+				<input id="sub2" type="file"  name="file">
 				<input type="hidden" name="wissid" value="<%=id%>">
 				<input type="hidden" name="question" value="2">
 				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
@@ -229,7 +229,7 @@
 				$("#q2").submit(function(e) {
 					e.preventDefault(); 
 					console.log('insert clicked');
-					var image_name = $('#sub').val();
+					var image_name = $('#sub2').val();
 					if(image_name== ''){
 						console.log('no name');
 						new swal({
@@ -240,7 +240,7 @@
 						return false;
 					}
 					else{
-						var extension = $('#sub').val().split('.').pop().toLowerCase();
+						var extension = $('#sub2').val().split('.').pop().toLowerCase();
 							if(jQuery.inArray(extension, ['pdf']) == -1){
 								new swal({
 									title : 'Wrong Extension', 
@@ -248,7 +248,7 @@
 									icon: 'error'
 								})
 								console.log('extension wrong');
-								$('#sub').val('');
+								$('#sub2').val('');
 								return false;
 							}
 						}
@@ -325,7 +325,7 @@
 			<br>
 			<br>
 			<form id="q3" enctype="multipart/form-data">
-				<input id="sub" type="file"  name="file">
+				<input id="sub3" type="file"  name="file">
 				<input type="hidden" name="wissid" value="<%=id%>">
 				<input type="hidden" name="question" value="3">
 				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
@@ -334,7 +334,7 @@
 				$("#q3").submit(function(e) {
 					e.preventDefault(); 
 					console.log('insert clicked');
-					var image_name = $('#sub').val();
+					var image_name = $('#sub3').val();
 					if(image_name== ''){
 						console.log('no name');
 						new swal({
@@ -345,7 +345,7 @@
 						return false;
 					}
 					else{
-						var extension = $('#sub').val().split('.').pop().toLowerCase();
+						var extension = $('#sub3').val().split('.').pop().toLowerCase();
 							if(jQuery.inArray(extension, ['pdf']) == -1){
 								new swal({
 									title : 'Wrong Extension', 
@@ -353,7 +353,7 @@
 									icon: 'error'
 								})
 								console.log('extension wrong');
-								$('#sub').val('');
+								$('#sub3').val('');
 								return false;
 							}
 						}
@@ -432,7 +432,7 @@
 			<br>
 			<br>
 			<form id="q4" enctype="multipart/form-data">
-				<input id="sub" type="file"  name="file">
+				<input id="sub4" type="file"  name="file">
 				<input type="hidden" name="wissid" value="<%=id%>">
 				<input type="hidden" name="question" value="4">
 				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
@@ -441,7 +441,7 @@
 				$("#q4").submit(function(e) {
 					e.preventDefault(); 
 					console.log('insert clicked');
-					var image_name = $('#sub').val();
+					var image_name = $('#sub4').val();
 					if(image_name== ''){
 						console.log('no name');
 						new swal({
@@ -452,7 +452,7 @@
 						return false;
 					}
 					else{
-						var extension = $('#sub').val().split('.').pop().toLowerCase();
+						var extension = $('#sub4').val().split('.').pop().toLowerCase();
 							if(jQuery.inArray(extension, ['pdf']) == -1){
 								new swal({
 									title : 'Wrong Extension', 
@@ -460,7 +460,7 @@
 									icon: 'error'
 								})
 								console.log('extension wrong');
-								$('#sub').val('');
+								$('#sub4').val('');
 								return false;
 							}
 						}
