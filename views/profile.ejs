@@ -306,23 +306,8 @@
     </div>
     <% } %>
     <br><br>
-    <% if(events.length) { %>
-    <div class="section-title row" data-num="02" data-aos="fade-up">
-        <h3 class="h6">Events Registered</h3>
-    </div>
-    <% } 
-    var values = {
-      "Analog Circuit Design" : "<div class='card' id='acd'><div class='content'><h2 class='title'>Analog Circuit Deisgn</h2><p class='copy'>Event Description</p><a href=''><button class='btn'>UPDATES</button></a></div></div>", 
-      "" : ""
-
-    }%>
-    <div class="row">
-        <main class="page-content">
-          <% for(var i=0; i<events.length; i++){
-            values[event[i].eventname]
-          } %>
-        </main>
-    </div>
+    
+    
   
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
