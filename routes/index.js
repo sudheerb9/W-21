@@ -634,7 +634,7 @@ router.post('/acd/login', function(req,res,next){
   conn.query(checkauth, (err,rows)=>{
     if (err) throw err;
     console.log(rows[0]);
-    if(rows[0].phone == password){
+    if(rows[0].year == password){
       req.session.testtakerid = rows[0].wissid;
       const checklog = ("SELECT * from `acd` WHERE wissid = '"+username+"';");
       conn.query(checklog,(err, rows)=>{
