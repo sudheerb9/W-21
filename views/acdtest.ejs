@@ -293,23 +293,23 @@
 			Consider the NMOS circuit below: <br>
 			&ensp;<img src="../images/test3.png" height="300"> <br>
 			<br><br>
-			Take VDD=10V
-			R1=R2=10MΩ
-			RD=Rs=6kΩ
-			Vt(threshold)=1V
+			Take VDD=10V, 
+			R1=R2=10MΩ, 
+			RD=Rs=6kΩ, 
+			Vt(threshold)=1V, 
 			µn Cox (w/L) =1mA/V2<br><br>
 			Specifications: <br>
 			&ensp;• Use nmos4 instead of inbuilt MOSFET nmos<br>
 			&ensp;• Name the nmos4 MOSFET as N_1u<br>
 			&ensp;• N_1u details can be provided in Spice directive as shown<br>
-			<span align="center"><b>.MODEL N_1u NMOS LEVEL = 3 </b>
-									<b>+ KP = 1000E-6 VTO=1</b></span>
+			<span align="center"><b>.MODEL N_1u NMOS LEVEL = 3 </b>&ensp;
+									<b>+ KP = 1000E-6 VTO=1</b></span><br>
 			&ensp;• Length and width of N_1u may be left unspecified<br>
 			
 			Perform the simulation with given specifications and verify whether
 			theoretical results are matching with experimental results.
 			<br><br>
-			a) Solve the above circuit to find VG, VD, Vs and ID theoretically with
+			a) Solve the above circuit to find V<sub>G</sub>, V<sub>D</sub>, V<sub>s</sub> and I<sub>D</sub> theoretically with
 			the knowledge of working of NMOS? Attach the photocopy of solved
 			problem? (<b>10 points</b>) <br><br>
 			b) Attach the screenshot of schematic consisting designed circuit?
@@ -398,13 +398,13 @@
 			&ensp;<img src="../images/test4.png" height="300"> <br>
 			<br><br>
 			Specifications: <br>
-			&ensp;• Take VCC=24V<br>
-			&ensp;• AV(OC)= -100<br>
-			&ensp;• IC=4mA<br>
-			&ensp;• VCE=12V<br>
-			&ensp;• IC (sat)=8mA<br>
+			&ensp;• Take V<sub>CC</sub>=24V<br>
+			&ensp;• A<sub>V</sub>(OC)= -100<br>
+			&ensp;• I<sub>C</sub>=4mA<br>
+			&ensp;• V<sub>CE</sub>=12V<br>
+			&ensp;• I<sub>C</sub> (sat)=8mA<br>
 			&ensp;• DC current gain(β)=100<br>
-			&ensp;• Take R2 ≤ (βRE)/10<br>
+			&ensp;• Take R<sub>2</sub> ≤ (βR<sub>E</sub>)/10<br>
 
 			
 			Perform the simulation with these specifications given above.
