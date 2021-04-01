@@ -1,27 +1,14 @@
-var DOMAIN = 'wissenaire.org';
-var mailgun = require('mailgun-js')({ apiKey: "", domain: DOMAIN });
-var MailComposer = require('nodemailer/lib/mail-composer');
+var API_KEY = 'YOUR_API_KEY';
+var DOMAIN = 'YOUR_DOMAIN_NAME';
+var mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
-var mailOptions = {
-  from: 'events@wissenaire.org',
+const data = {
+  from: 'Wissenaire IIT Bhubaneswar <events@wissenaire.org>',
   to: 'no-reply@wissenaire.org',
   subject: 'Hello',
-  text: 'Pora rey'
+  text: 'Testing some Mailgun awesomeness!'
 };
 
-var mail = new MailComposer(mailOptions);
-
-mail.compile().build(function(mailBuildError, message) {
-
-    var dataToSend = {
-        to: 'no-reply@wissenaire.org',
-        message: message.toString('ascii')
-    };
-
-    mailgun.messages().sendMime(dataToSend, function (sendError, body) {
-        if (sendError) {
-            console.log(sendError);
-            return;
-        }
-    });
+mailgun.messages().send(data, (error, body) => {
+  console.log(body);
 });
