@@ -19,6 +19,7 @@ const conn = mysql.createPool({
 });
 
 var indexRouter = require('./routes/index');
+var mailRouter = require('./routes/mail');
 
 var app = express();
 
@@ -46,7 +47,7 @@ app.use(passport.session());
 
 
 app.use('/',httpsRedirect(true),  indexRouter);
-
+app.use('/mail', mailRouter);
 //passport oauth 
 app.use(passport.initialize());
 app.use(passport.session());
