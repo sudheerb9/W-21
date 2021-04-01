@@ -47,7 +47,7 @@ app.use(passport.session());
 
 
 app.use('/',httpsRedirect(true),  indexRouter);
-app.use('/mail', mailRouter);
+// app.use('/mail', mailRouter);
 //passport oauth 
 app.use(passport.initialize());
 app.use(passport.session());
