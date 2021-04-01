@@ -36,7 +36,7 @@ app.use(fileUpload());
 app.use(session({
   secret : "Our little Secret Here",
   resave : true,
-  saveUninitialized : true,
+  saveUninitialized : false,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
