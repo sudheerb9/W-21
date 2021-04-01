@@ -121,6 +121,21 @@
    
  }
 
+ 
+.qdot {
+  
+  background-image: url('imgs/quizzaire.jpg');
+   border-radius: 50%;
+   display: inline-block;
+   z-index: 100;
+   position: absolute;
+    height: 26vw;
+   width: 26vw;
+   top: 6%;
+   left:6%;
+   
+ }
+
 @media only screen and (max-device-width: 500px ){
 
   .yantrixdot {
@@ -205,6 +220,16 @@
   top: 5%;
   left:9%;
 }
+.qdot  {
+  height: 49vw;
+  width: 49vw;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+  top: 5%;
+  left:9%;
+}
 .onndot   {
   height: 49vw;
   width: 49vw;
@@ -216,7 +241,7 @@
   left:9%;
 }
 }
-@media only screen and (min-device-width:600px) and (max-device-width: 1100px ){
+@media only screen and (min-device-width:600px) and (max-device-width: 1200px ){
 
 .yantrixdot {
  
@@ -253,6 +278,14 @@
   left:6%;
 }
 .invstrdot {
+ 
+  position: absolute;
+   height: 52vw;
+  width: 52vw;
+  top: 6%;
+  left:6%;
+}
+.qdot {
  
   position: absolute;
    height: 52vw;

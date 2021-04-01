@@ -308,6 +308,19 @@ router.get('/valorant', function(req, res, next){
   else res.render('valorant', {participant: false})
 })
 
+router.get('/quizzaire', function(req, res, next){
+  if (req.user) { 
+    console.log('loggedin')
+    const qr = ("SELECT * from users where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      console.log(rows[0])
+      res.render('quizzaire', {participant : rows[0]});
+    })
+  }
+  else res.render('quizzaire', {participant: false})
+})
+
 router.get('/workshops', function(req, res, next){
   if (req.user) { 
     console.log('loggedin')
