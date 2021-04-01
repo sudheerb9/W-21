@@ -681,8 +681,7 @@ router.post('/acd/submissiona', function(req,res,next){
     return res.send('No files were uploaded.');
   }
   file = req.files.filea;
-  __dirname = path.dirname(__dirname) ;
-  uploadPath = path.normalize( __dirname + '/public/uploads/' + name + '.pdf') 
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/' + name + '.pdf') 
   file.mv(uploadPath, function(err) {
     if (err){
       console.log(err)
@@ -704,8 +703,7 @@ router.post('/acd/submissionb', function(req,res,next){
     return res.send('No files were uploaded.');
   }
   file = req.files.fileb;
-  __dirname = path.dirname(__dirname) ;
-  uploadPath = path.normalize( __dirname + '/public/uploads/' + name + '.pdf') 
+  uploadPath = path.normalize( '/home/wissenaire/repositories/W-21/public/uploads/' + name + '.pdf') 
   file.mv(uploadPath, function(err) {
     if (err){
       console.log(err)
@@ -728,8 +726,7 @@ router.post('/acd/submissionc', function(req,res,next){
     return res.send('No files were uploaded.');
   }
   file = req.files.filec;
-  __dirname = path.dirname(__dirname) ;
-  uploadPath = path.normalize( __dirname + '/public/uploads/' + name + '.pdf') 
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/' + name + '.pdf') 
   file.mv(uploadPath, function(err) {
     if (err){
       console.log(err)
@@ -751,8 +748,7 @@ router.post('/acd/submissiond', function(req,res,next){
     return res.send('No files were uploaded.');
   }
   file = req.files.filed;
-  __dirname = path.dirname(__dirname) ;
-  uploadPath = path.normalize( __dirname + '/public/uploads/' + name + '.pdf') 
+  uploadPath = path.normalize( '/home/wissenaire/repositories/W-21/public/uploads/' + name + '.pdf') 
   file.mv(uploadPath, function(err) {
     if (err){
       console.log(err)
