@@ -760,4 +760,59 @@ router.post('/acd/submissiond', function(req,res,next){
 })
 
 
+router.get('/maths/login', function(req,res,next){
+  res.render('mologin');
+})
+
+router.post('/maths/login', function(req,res,next){
+  var username = req.body.username;
+  var password = req.body.password;
+  const checkauth = ("SELECT * from `reg` WHERE eventname = 'MATHS OLYMPIAD' AND wissid = '"+username+"';");
+  conn.query(checkauth, (err,rows)=>{
+    if (err) throw err;
+    console.log(rows[0]);
+    if(rows[0].phone == password){
+      req.session.testtakerid = rows[0].wissid;
+      const checklog = ("SELECT * from `maths` WHERE wissid = '"+username+"';");   //change maths2 here
+      conn.query(checklog,(err, rows)=>{
+        if(err) throw err;
+        if(rows[0]) res.send('Already Logged in');
+        else res.send('You are all set');
+      })
+    }
+    else res.send('Invalid Credentials');
+  })
+})
+
+router.get('/maths/rules', function(req,res,next){
+  res.render('morules', {id: req.session.testtakerid});  //change morules2 here !
+})
+
+router.post('/maths/notetime', function(req,res,next){
+  const wissid = req.body.wissid;
+  const time = req.body.time;
+  const insertquery = ("INSERT INTO `maths` (wissid, time) VALUES ('"+wissid+"', '"+time+"');");   //change maths2 here !
+  conn.query(insertquery, (err,rows)=>{
+    if (err) throw err; 
+    res.send ('success');
+  })
+})
+
+router.get('/maths/round1', function(req,res,next){
+  const quer = ("SELECT * FROM `maths` WHERE wissid = '"+req.session.testtakerid+"';");  
+  conn.query(quer, (err,rows)=>{
+    var time = rows[0].time;
+    res.render('motest', {starttime: time, id: req.session.testtakerid});    
+  })
+  
+})
+
+router.get('/maths/round2', function(req,res,next){
+  const quer = ("SELECT * FROM `maths2` WHERE wissid = '"+req.session.testtakerid+"';");  
+  conn.query(quer, (err,rows)=>{
+    var time = rows[0].time;
+    res.render('motest2', {starttime: time, id: req.session.testtakerid});    
+  })
+  
+})
 module.exports = router;
