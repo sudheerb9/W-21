@@ -447,10 +447,10 @@ router.get('/initiatives', function(req, res, next){
     conn.query(qr, (err, rows) => {
       if(err) throw err;
       console.log(rows[0])
-      res.render('comingsoon', {participant : rows[0]});
+      res.render('initiatives', {participant : rows[0]});
     })
   }
-  else res.render('comingsoon', {participant: false})
+  else res.render('initiatives', {participant: false})
 })
 
 router.get('/highlights', function(req, res, next){
