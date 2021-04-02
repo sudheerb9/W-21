@@ -141,7 +141,7 @@
 			  var form = $(this);
 			  $.ajax({
 				  type: "POST",
-				  url: '/maths/login',
+				  url: '/maths2/login',
 				  data: form.serialize(), 
 				  success: function(result)
 				  {
@@ -158,7 +158,7 @@
 							  text: result,
 							  icon: 'success'
 						  }).then((value)=>{
-							 window.location.href = '/maths/rules'; 
+							 window.location.href = '/maths2/rules'; 
 						  })
 					  }
 					  else if(result == 'Already Logged in'){
