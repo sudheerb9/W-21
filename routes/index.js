@@ -815,4 +815,246 @@ router.get('/maths/round2', function(req,res,next){
   })
   
 })
+
+router.post('/maths/submission', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.file;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissiona', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-1' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filea;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissionb', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-2' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.fileb;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissionc', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-3' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filec;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissiond', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-4' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filed;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissione', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-5' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filee;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissionf', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-6' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filef;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissiong', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-7' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.fileg;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissionh', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-8' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.fileh;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissioni', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-9' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filei;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
+
+router.post('/maths/submissionj', function(req,res,next){
+  console.log('upload')
+  const wissid = req.body.wissid;
+  var name = wissid + '-10' ;
+  let file;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+    console.log('not found')
+    return res.send('No files were uploaded.');
+  }
+  file = req.files.filej;
+  uploadPath = path.normalize('/home/wissenaire/repositories/W-21/public/uploads/maths/' + name + '.pdf') 
+  file.mv(uploadPath, function(err) {
+    if (err){
+      console.log(err)
+      return res.send(err);
+    }
+    console.log('yaay ')
+    res.send('success');
+  });
+})
 module.exports = router;

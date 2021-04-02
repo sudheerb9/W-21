@@ -94,7 +94,8 @@
 	<div class="container" id="body" style="color: white; margin-top: 75px; margin-bottom: 25px;">
 		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
 			<h4>Question No. 1</h4><br>
-			
+			If ( √(8+𝑖) ) <sup>50</sup> = (3<sup>49</sup>) *{(a + ib)}, then find the value of (a<sup>2</sup> + b<sup>2</sup>).
+			<br><br>
 			<form id="q1" enctype="multipart/form-data">
 				<input id="sub1" type="file"  name="filea">
 				<input type="hidden" name="wissid" value="<%=id%>">
@@ -165,7 +166,10 @@
 
 		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
 			<h4>Question No. 2</h4><br>
-			
+			A quadratic curve and a straight-line y = ax + b (a>0) intersect each other at points
+that lie on the axes. One of the points is (-4, 0). The points of intersection of the
+curve and x-axis are 6 units apart. Find a + b.
+<br><br>
 			<form id="q2" enctype="multipart/form-data">
 				<input id="sub2" type="file"  name="fileb">
 				<input type="hidden" name="wissid" value="<%=id%>">
@@ -238,7 +242,8 @@
 
 		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
 			<h4>Question No. 3</h4><br>
-			
+			Let f be a twice differentiable function such that f (1/𝑛) =𝑛<sup>2</sup> /𝑛<sup>2</sup>+1, n = 1, 2, 3, …Then the magnitude of f”(0) is?
+			<br><br>
 			<form id="q3" enctype="multipart/form-data">
 				<input id="sub3" type="file"  name="filec">
 				<input type="hidden" name="wissid" value="<%=id%>">
@@ -310,7 +315,8 @@
 
 		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
 			<h4>Question No. 4</h4><br>
-			
+			What is the sum of all the five-digit numbers that can be formed using the digits 1,
+2, 3, 4 and 5 if no digit is repeated? <br><br>
 			<form id="q4" enctype="multipart/form-data">
 				<input id="sub4" type="file"  name="filed">
 				<input type="hidden" name="wissid" value="<%=id%>">
@@ -380,6 +386,451 @@
 		</div>
 
 		<br><br>
+
+		<br><br>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 5</h4><br>
+			Two non-negative integers a and b are chosen at random from the set of nonnegative integers. In terms of percentages, what is the probability of a2 + b2 being
+divisible by 10?<br><br>
+			<form id="q5" enctype="multipart/form-data">
+				<input id="sub5" type="file"  name="filee">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q5").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub5').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub5').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub5').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/maths/submissione',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: 'error',
+									icon: 'error'
+								});
+								console.log(result)
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/maths/<%=id%>-5.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+		<br><br>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 6</h4><br>
+			Find all pairs of a, b such that (a<sup>2</sup>+b)/(b<sup>2</sup>-a) and (b<sup>2</sup>+a)/(a<sup>2</sup>-b) are both integers?<br><br>
+			<form id="q6" enctype="multipart/form-data">
+				<input id="sub6" type="file"  name="filef">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q6").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub6').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub6').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub6').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/maths/submissionf',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: 'error',
+									icon: 'error'
+								});
+								console.log(result)
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/maths/<%=id%>-6.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+		<br><br>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 7</h4><br>
+			Determine all pairs (x, y) of positive integers such that (x<sup>2</sup>y+x+y) is divisible by (xy<sup>2</sup>+y+7)?
+			<br><br>
+			<form id="q7" enctype="multipart/form-data">
+				<input id="sub7" type="file"  name="fileg">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q7").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub7').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub7').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub7').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/maths/submissiong',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: 'error',
+									icon: 'error'
+								});
+								console.log(result)
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/maths/<%=id%>-7.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+
+		<br><br>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 8</h4><br>
+			Suppose that a and b are natural number, such that P= (b/4)[√ (2a − b) / √ 2a+b ] is a prime number. Find all possible values of a, b and p?
+			<br><br>
+			<form id="q8" enctype="multipart/form-data">
+				<input id="sub8" type="file"  name="fileh">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q8").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub8').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub8').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub8').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/maths/submissionh',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: 'error',
+									icon: 'error'
+								});
+								console.log(result)
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/maths/<%=id%>-8.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+		<br><br>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 9</h4><br>
+			Let a, b, and c be given positive numbers. Determine all positive real numbers x, y, and z such that x+ y+ z = a+ b+ c, 4xyz−(a<sup>2</sup>x+b<sup>2</sup>y+c<sup>2</sup>z) = abc?
+			<br><br>
+			<form id="q9" enctype="multipart/form-data">
+				<input id="sub9" type="file"  name="filei">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q9").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub9').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub9').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub9').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/maths/submissioni',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: 'error',
+									icon: 'error'
+								});
+								console.log(result)
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/maths/<%=id%>-9.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+		<br><br>
+
+		<div style="padding: 20px; border: 1.5px solid white; border-radius: 15px;">
+			<h4>Question No. 10</h4><br>
+			Find all solutions to the system of equations 6(x−y<sup>-1</sup>) = 3(y−z<sup>-1</sup>) = 2(z−x<sup>-1</sup>) =xyz−(xyz)<sup>-1</sup> in nonzero real numbers x, y, z?			<br><br>
+			<form id="q10" enctype="multipart/form-data">
+				<input id="sub10" type="file"  name="filej">
+				<input type="hidden" name="wissid" value="<%=id%>">
+				<button type="submit" class="btn btn-primary">Choose a file and Submit</button>
+			</form>
+			<script>
+				$("#q10").submit(function(e) {
+					e.preventDefault(); 
+					console.log('insert clicked');
+					var image_name = $('#sub10').val();
+					if(image_name== ''){
+						console.log('no name');
+						new swal({
+							title : 'No file', 
+							text: 'Please select a file', 
+							icon: 'error'
+						})
+						return false;
+					}
+					else{
+						var extension = $('#sub10').val().split('.').pop().toLowerCase();
+							if(jQuery.inArray(extension, ['pdf']) == -1){
+								new swal({
+									title : 'Wrong Extension', 
+									text: 'Please upload a pdf file', 
+									icon: 'error'
+								})
+								console.log('extension wrong');
+								$('#sub10').val('');
+								return false;
+							}
+						}
+					var formData = new FormData(this);
+					console.log('uploading');
+
+					$.ajax({
+						type: "POST",
+						url: '/maths/submissionj',
+						data: formData, 
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(result)
+						{
+							if(result == 'success'){
+								new swal({
+									title: 'Success',
+									text: 'Submitted Successfully',
+									icon: 'success'
+								});
+							}
+							
+							else {
+								new swal({
+									title: 'Error',
+									text: 'error',
+									icon: 'error'
+								});
+								console.log(result)
+							}
+						}
+					});
+				  });
+			</script>
+			<a class="btn btn-primary" type="button" href="../uploads/maths/<%=id%>-10.pdf">Check Uploaded pdf</a>
+
+		</div>
+
+		<br>
 
 		<button class="btn btn-danger" type="button" align="center" id="end">End test</button>
 		<script>
