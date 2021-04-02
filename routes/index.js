@@ -771,7 +771,7 @@ router.post('/maths/login', function(req,res,next){
   conn.query(checkauth, (err,rows)=>{
     if (err) throw err;
     console.log(rows[0]);
-    if(rows[0].phone == password){
+    if(rows[0].institute == password){
       req.session.testtakerid = rows[0].wissid;
       const checklog = ("SELECT * from `maths` WHERE wissid = '"+username+"';");   //change maths2 here
       conn.query(checklog,(err, rows)=>{
