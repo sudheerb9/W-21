@@ -764,6 +764,10 @@ router.get('/maths/login', function(req,res,next){
   res.render('mologin');
 })
 
+router.get('/maths2/login', function(req,res,next){
+  res.render('mologin2');
+})
+
 router.post('/maths/login', function(req,res,next){
   var username = req.body.username;
   var password = req.body.password;
@@ -784,14 +788,48 @@ router.post('/maths/login', function(req,res,next){
   })
 })
 
+router.post('/maths2/login', function(req,res,next){
+  var username = req.body.username;
+  var password = req.body.password;
+  const checkauth = ("SELECT * from `reg` WHERE eventname = 'MATHS OLYMPIAD' AND wissid = '"+username+"';");
+  conn.query(checkauth, (err,rows)=>{
+    if (err) throw err;
+    console.log(rows[0]);
+    if(rows[0].institute == password){
+      req.session.testtakerid = rows[0].wissid;
+      const checklog = ("SELECT * from `maths2` WHERE wissid = '"+username+"';");   //change maths2 here
+      conn.query(checklog,(err, rows)=>{
+        if(err) throw err;
+        if(rows[0]) res.send('Already Logged in');
+        else res.send('You are all set');
+      })
+    }
+    else res.send('Invalid Credentials');
+  })
+})
+
 router.get('/maths/rules', function(req,res,next){
   res.render('morules', {id: req.session.testtakerid});  //change morules2 here !
+})
+
+router.get('/maths2/rules', function(req,res,next){
+  res.render('morules2', {id: req.session.testtakerid});  //change morules2 here !
 })
 
 router.post('/maths/notetime', function(req,res,next){
   const wissid = req.body.wissid;
   const time = req.body.time;
   const insertquery = ("INSERT INTO `maths` (wissid, time) VALUES ('"+wissid+"', '"+time+"');");   //change maths2 here !
+  conn.query(insertquery, (err,rows)=>{
+    if (err) throw err; 
+    res.send ('success');
+  })
+})
+
+router.post('/maths2/notetime', function(req,res,next){
+  const wissid = req.body.wissid;
+  const time = req.body.time;
+  const insertquery = ("INSERT INTO `maths2` (wissid, time) VALUES ('"+wissid+"', '"+time+"');");   //change maths2 here !
   conn.query(insertquery, (err,rows)=>{
     if (err) throw err; 
     res.send ('success');
