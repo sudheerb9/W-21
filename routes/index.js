@@ -434,10 +434,10 @@ router.get('/exhibits', function(req, res, next){
     conn.query(qr, (err, rows) => {
       if(err) throw err;
       console.log(rows[0])
-      res.render('comingsoon', {participant : rows[0]});
+      res.render('exb', {participant : rows[0]});
     })
   }
-  else res.render('comingsoon', {participant: false})
+  else res.render('exb', {participant: false})
 })
 
 router.get('/initiatives', function(req, res, next){
